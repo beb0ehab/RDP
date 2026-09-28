@@ -13,7 +13,6 @@ import {
   WhatsAppIcon,
 } from './Icons';
 import { getScreenshot } from '../lib/screenshots';
-import { SectionHeading } from './SectionHeading';
 
 type CopyState = 'idle' | 'copied' | 'failed';
 
@@ -42,36 +41,49 @@ async function copyText(text: string): Promise<boolean> {
   }
 }
 
-function LinkCard({
+/** One row of the contact list: red icon circle + label + value. */
+function ContactRow({
   href,
   icon,
-  title,
-  text,
+  label,
+  value,
   external = true,
   download,
+  ltr = false,
 }: {
-  href: string;
+  href?: string;
   icon: ReactNode;
-  title: string;
-  text: string;
+  label: string;
+  value: string;
   external?: boolean;
   download?: string;
+  ltr?: boolean;
 }) {
   const { t } = usePreferences();
+  const content = (
+    <>
+      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border-2 border-accent text-accent">
+        {icon}
+      </span>
+      <span className="min-w-0">
+        <span className="block text-[0.65rem] font-bold uppercase tracking-[0.16em] text-muted">
+          {label}
+        </span>
+        <span className="block truncate text-sm font-semibold" dir={ltr ? 'ltr' : undefined}>
+          {value}
+        </span>
+      </span>
+    </>
+  );
+  if (!href) return <div className="flex min-h-[52px] items-center gap-4">{content}</div>;
   return (
     <a
       href={href}
       {...(external ? { target: '_blank', rel: 'noopener' } : {})}
       {...(download ? { download } : {})}
-      className="group flex min-h-[64px] items-center gap-4 rounded-2xl border border-line bg-surface/60 p-4 transition hover:-translate-y-0.5 hover:border-accent/60"
+      className="group flex min-h-[52px] items-center gap-4 rounded-lg transition-colors hover:text-accent"
     >
-      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border-2 border-accent/70 text-accent">
-        {icon}
-      </span>
-      <span className="min-w-0">
-        <span className="block font-bold">{title}</span>
-        <span className="block truncate text-sm text-muted">{text}</span>
-      </span>
+      {content}
       {external && <span className="sr-only">{t.a11y.opensInNewTab}</span>}
     </a>
   );
@@ -138,112 +150,115 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="section" aria-labelledby="contact-title">
-      <div className="container">
-        <div className="force-dark relative overflow-hidden rounded-[2rem] border border-line bg-bg px-5 py-12 sm:px-10 sm:py-16 lg:px-14">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -end-24 -top-24 h-96 w-96 rounded-full bg-accent/25 blur-3xl"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-32 -start-24 h-80 w-80 rounded-full bg-accent/10 blur-3xl"
-          />
+    <section
+      id="contact"
+      className="force-dark relative overflow-hidden bg-bg py-16 sm:py-20"
+      aria-labelledby="contact-title"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -end-32 top-10 h-[28rem] w-[28rem] rounded-full bg-accent/25 blur-3xl"
+      />
+      <div className="container relative grid gap-14 lg:grid-cols-2 lg:items-center">
+        <div>
+          <h2
+            id="contact-title"
+            className="reveal max-w-md font-display text-5xl leading-[0.95] sm:text-6xl"
+          >
+            {t.contact.title}
+          </h2>
+          <p className="reveal mt-4 max-w-md text-pretty text-muted">{t.contact.intro}</p>
 
-          <div className="relative grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div>
-              <SectionHeading
-                id="contact-title"
-                eyebrow={t.contact.eyebrow}
-                title={t.contact.title}
-                lead={t.contact.lead}
-              />
+          <a
+            href={site.whatsappUrl}
+            target="_blank"
+            rel="noopener"
+            className="reveal mt-7 inline-flex min-h-[60px] w-full items-center justify-center gap-3 rounded-md bg-[#25D366] px-6 text-lg font-extrabold text-[#052e16] shadow-lift transition hover:-translate-y-0.5 hover:bg-[#2ee173] sm:w-auto"
+          >
+            <WhatsAppIcon size={24} />
+            {t.contact.whatsapp}
+            <span className="sr-only">{t.a11y.opensInNewTab}</span>
+          </a>
 
-              <div className="reveal mt-8 space-y-3">
-                <a
-                  href={site.whatsappUrl}
-                  target="_blank"
-                  rel="noopener"
-                  className="flex min-h-[72px] items-center justify-center gap-3 rounded-2xl bg-[#25D366] px-6 text-lg font-extrabold text-[#052e16] shadow-lift transition hover:-translate-y-0.5 hover:bg-[#2ee173] sm:text-xl"
-                >
-                  <WhatsAppIcon size={26} />
-                  <span>
-                    {t.contact.whatsapp}
-                    <span className="block text-sm font-semibold opacity-80" dir="ltr">
-                      {site.whatsappDisplay}
-                    </span>
-                  </span>
-                  <span className="sr-only">{t.a11y.opensInNewTab}</span>
-                </a>
-
-                <div className="flex items-center gap-2 rounded-2xl border border-line bg-surface/60 p-2 ps-4">
-                  <MailIcon size={20} className="shrink-0 text-accent" />
-                  <a
-                    href={`mailto:${site.email}`}
-                    className="min-h-[44px] min-w-0 flex-1 truncate py-2.5 font-semibold underline-offset-4 hover:underline"
-                    dir="ltr"
-                  >
-                    <span className="sr-only">{t.contact.email}: </span>
-                    {site.email}
-                  </a>
-                  <button
-                    type="button"
-                    onClick={onCopy}
-                    className="inline-flex min-h-[44px] shrink-0 items-center gap-2 rounded-xl bg-accent-strong px-3.5 text-sm font-bold text-accent-ink transition hover:opacity-90"
-                  >
-                    {copy === 'copied' ? <CheckIcon size={17} /> : <CopyIcon size={17} />}
-                    <span className="hidden sm:inline">
-                      {copy === 'copied' ? t.contact.copied : t.contact.copy}
-                    </span>
-                    <span className="sr-only sm:hidden">{t.contact.copy}</span>
-                  </button>
-                </div>
-                <p role="status" aria-live="polite" className="min-h-[1.25rem] text-sm text-muted">
-                  {copy === 'copied'
-                    ? t.contact.copied
-                    : copy === 'failed'
-                      ? t.contact.copyFailed
-                      : ''}
-                </p>
-
-                <div className="grid gap-3 sm:grid-cols-2">
-                  <LinkCard
-                    href={site.linkedinUrl}
-                    icon={<LinkedInIcon size={18} />}
-                    title={t.contact.linkedin}
-                    text={t.contact.linkedinText}
-                  />
-                  <LinkCard
-                    href={asset(site.cvFile)}
-                    icon={<DownloadIcon size={18} />}
-                    title={t.contact.cv}
-                    text={t.contact.cvText}
-                    external={false}
-                    download={site.cvFile}
-                  />
-                  {site.githubUrl && (
-                    <LinkCard
-                      href={site.githubUrl}
-                      icon={<GitHubIcon size={18} />}
-                      title={t.contact.github}
-                      text={t.contact.githubText}
-                    />
-                  )}
-                </div>
-                <p className="inline-flex items-center gap-2 pt-2 text-sm text-muted">
-                  <PinIcon size={16} className="text-accent" />
-                  {t.contact.location}
-                </p>
+          <div className="reveal mt-8 space-y-2">
+            <ContactRow
+              href={site.whatsappUrl}
+              icon={<WhatsAppIcon size={18} />}
+              label="WhatsApp"
+              value={site.whatsappDisplay}
+              ltr
+            />
+            <div className="flex items-center gap-3">
+              <div className="min-w-0 flex-1">
+                <ContactRow
+                  href={`mailto:${site.email}`}
+                  icon={<MailIcon size={18} />}
+                  label={t.contact.email}
+                  value={site.email}
+                  external={false}
+                  ltr
+                />
               </div>
+              <button
+                type="button"
+                onClick={onCopy}
+                className="inline-flex min-h-[44px] shrink-0 items-center gap-2 rounded-md border border-line px-3 text-xs font-bold uppercase tracking-wide transition-colors hover:border-accent hover:text-accent"
+              >
+                {copy === 'copied' ? <CheckIcon size={16} /> : <CopyIcon size={16} />}
+                <span className="hidden sm:inline">
+                  {copy === 'copied' ? t.contact.copied : t.contact.copy}
+                </span>
+                <span className="sr-only sm:hidden">{t.contact.copy}</span>
+              </button>
             </div>
-
-            <div className="reveal pb-8">
-              <DeviceMockup />
-              <p className="mt-14 text-center font-display text-3xl leading-tight sm:text-4xl">
-                {t.contact.tagline}
-              </p>
-            </div>
+            <p role="status" aria-live="polite" className="sr-only">
+              {copy === 'copied' ? t.contact.copied : copy === 'failed' ? t.contact.copyFailed : ''}
+            </p>
+            <ContactRow
+              href={site.linkedinUrl}
+              icon={<LinkedInIcon size={17} />}
+              label={t.contact.linkedin}
+              value="in/adly-ehab-dev"
+              ltr
+            />
+            {site.githubUrl && (
+              <ContactRow
+                href={site.githubUrl}
+                icon={<GitHubIcon size={17} />}
+                label={t.contact.github}
+                value={site.githubUrl.replace(/^https?:\/\//, '')}
+                ltr
+              />
+            )}
+            <ContactRow
+              href={asset(site.cvFile)}
+              icon={<DownloadIcon size={18} />}
+              label={t.contact.cvText}
+              value={t.contact.cv}
+              external={false}
+              download={site.cvFile}
+            />
+            <ContactRow
+              icon={<PinIcon size={18} />}
+              label={t.hero.basedLabel}
+              value={t.contact.location}
+            />
           </div>
+
+          <div className="reveal mt-10 flex items-center gap-4 border-t border-line pt-6">
+            <span
+              aria-hidden="true"
+              className="grid h-12 w-12 shrink-0 place-items-center rounded-md bg-accent-strong font-display text-xl text-white"
+              dir="ltr"
+            >
+              AE
+            </span>
+            <p className="font-display text-xl leading-tight">{t.contact.tagline}</p>
+          </div>
+        </div>
+
+        <div className="reveal pb-8">
+          <DeviceMockup />
         </div>
       </div>
     </section>

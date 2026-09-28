@@ -22,13 +22,18 @@ const en = {
     services: 'Services',
     about: 'About',
     contact: 'Contact',
+    brand: 'Portfolio',
+    available: 'Available for projects',
     langShort: 'عربي',
     langLabel: 'العربية',
   },
   hero: {
-    greeting: "Hi, I'm",
+    greeting: "Hello, I'm",
     name: 'Adly Ehab',
     title: 'Web & AI Automation Developer',
+    subtitle: 'Websites · Online stores · CRM · Bots',
+    basedLabel: 'Based in',
+    basedValue: 'Cairo, Egypt',
     intro:
       "I build websites, online stores and web systems, and connect them to AI and automation. I've shipped real products for clients and businesses, including a CRM that handles 500+ leads a day.",
     viewWork: 'View my work',
@@ -38,10 +43,10 @@ const en = {
     portfolioWord: 'Portfolio',
     photoAlt: 'Portrait of Adly Ehab',
     facts: [
+      { label: 'CRM at scale', value: '500+ leads a day' },
       { label: 'Specialized in', value: 'Web, CRM & AI automation' },
-      { label: 'Shipped', value: 'A CRM handling 500+ leads a day' },
-      { label: 'Available for', value: 'Full-time, remote & freelance' },
-      { label: 'Based in', value: 'Cairo, Egypt — open to remote' },
+      { label: 'Available for', value: 'Full-time & freelance' },
+      { label: 'Working', value: 'Remote · worldwide' },
     ],
   },
   projects: {
@@ -51,8 +56,8 @@ const en = {
     liveSite: 'Live site',
     details: 'Details',
     viewDetails: 'View details for',
-    moreShow: 'More projects',
-    moreHide: 'Show fewer projects',
+    moreShow: 'View all projects',
+    moreHide: 'Show fewer',
     highlights: 'Highlights',
     techStack: 'Tech stack',
     desktopShot: 'desktop screenshot',
@@ -94,6 +99,12 @@ const en = {
       "I build websites, online stores and web systems, and connect them to AI and automation. I've shipped real products for clients and businesses, including a CRM that handles 500+ leads a day. Several of my products are Arabic-first, with full right-to-left support.",
     ],
     skillsTitle: 'Skills',
+    bandTitle: 'About & skills',
+    bullets: [
+      'Web & AI automation developer based in Cairo, Egypt',
+      'Real products shipped for clients and businesses',
+      'Arabic-first, bilingual (RTL) interfaces',
+    ],
     groups: [
       {
         title: 'Front-end',
@@ -138,7 +149,8 @@ const en = {
   contact: {
     eyebrow: 'Contact',
     title: "Let's work together",
-    tagline: "Let's build something that works for your business.",
+    tagline: "Let's create something amazing together",
+    intro: "I'm always open to new projects and exciting collaborations.",
     mockupAlt: 'Kero Tours and LEADORA shown on a laptop and a phone',
     lead: 'Need a website, an online store, a CRM, a bot or AI automation? Or hiring for a front-end, web or AI automation role? Message me — WhatsApp is the fastest.',
     whatsapp: 'Chat on WhatsApp',

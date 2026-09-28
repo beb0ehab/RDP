@@ -34,6 +34,7 @@ export default {
           'Roboto',
           'sans-serif',
         ],
+        script: ['"Great Vibes"', 'cursive'],
         display: ['Anton', '"IBM Plex Sans Arabic"', 'Impact', 'Arial Narrow', 'sans-serif'],
         arabic: ['"IBM Plex Sans Arabic"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
       },

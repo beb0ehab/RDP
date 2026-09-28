@@ -55,8 +55,13 @@
   /* Anton ships a single (already heavy) weight; Arabic falls back to Plex Arabic bold. */
   .font-display {
     font-weight: 400;
+    font-synthesis: none;
     text-transform: uppercase;
     letter-spacing: 0.01em;
+  }
+  html[lang='ar'] .font-script {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-weight: 600;
   }
   html[lang='ar'] .font-display {
     font-weight: 700;

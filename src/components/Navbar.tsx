@@ -18,7 +18,12 @@ export function Logo() {
       >
         AE
       </span>
-      <span className="text-base sm:text-lg">{t.hero.name}</span>
+      <span className="flex flex-col leading-none">
+        <span className="font-display text-base tracking-wide sm:text-lg">{t.hero.name}</span>
+        <span className="mt-1 text-[0.6rem] font-bold uppercase tracking-[0.25em] text-accent">
+          {t.nav.brand}
+        </span>
+      </span>
       <span className="sr-only"> — {t.a11y.home}</span>
     </a>
   );
@@ -97,7 +102,7 @@ export function Navbar() {
             <li key={id}>
               <a
                 href={`#${id}`}
-                className="inline-flex min-h-[44px] items-center rounded-lg px-3 text-sm font-medium text-muted transition-colors hover:text-ink"
+                className="inline-flex min-h-[44px] items-center rounded-lg px-3 text-xs font-bold uppercase tracking-[0.14em] text-muted transition-colors hover:text-accent"
               >
                 {t.nav[id]}
               </a>
@@ -106,6 +111,10 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <p className="me-2 hidden items-center gap-2 text-[0.7rem] font-bold uppercase tracking-[0.18em] text-muted xl:inline-flex">
+            <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
+            {t.nav.available}
+          </p>
           <div className="hidden md:block">
             <Toggles />
           </div>

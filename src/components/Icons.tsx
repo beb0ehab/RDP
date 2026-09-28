@@ -164,6 +164,12 @@ export const ClockIcon = (p: IconProps) => (
     <path d="M12 7v5l3 2" />
   </Stroke>
 );
+export const GlobeIcon = (p: IconProps) => (
+  <Stroke {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M3 12h18M12 3c2.5 2.7 3.7 5.7 3.7 9s-1.2 6.3-3.7 9c-2.5-2.7-3.7-5.7-3.7-9S9.5 5.7 12 3z" />
+  </Stroke>
+);
 export const QuoteIcon = ({ size = 48, ...rest }: IconProps) => (
   <svg
     width={size}
