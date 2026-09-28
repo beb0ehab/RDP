@@ -7,10 +7,12 @@ import { ProjectMedia } from './ProjectMedia';
 
 interface Props {
   project: Project;
+  /** Position in the list, shown as a big "01", "02"… label. */
+  index: number;
   onOpen: (project: Project, trigger: HTMLElement) => void;
 }
 
-export function ProjectCard({ project, onOpen }: Props) {
+export function ProjectCard({ project, index, onOpen }: Props) {
   const { t, lang } = usePreferences();
   const title = project.title[lang];
   const mobile = getScreenshot(project.id)?.mobile;
@@ -25,6 +27,13 @@ export function ProjectCard({ project, onOpen }: Props) {
           alt={`${title} — ${t.projects.desktopShot}`}
           sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw"
         />
+        <span
+          aria-hidden="true"
+          dir="ltr"
+          className="absolute start-3 top-3 rounded-lg bg-black/70 px-2.5 py-1 font-display text-2xl leading-none text-[#ff4655] backdrop-blur-sm"
+        >
+          {String(index + 1).padStart(2, '0')}
+        </span>
         {mobile && shot && (
           <div className="absolute bottom-3 end-3 w-[22%] overflow-hidden rounded-[10px] border-[3px] border-ink/90 bg-ink shadow-lift">
             <img
@@ -50,7 +59,7 @@ export function ProjectCard({ project, onOpen }: Props) {
             {project.badge[lang]}
           </span>
         )}
-        <h3 className="text-lg font-bold leading-snug sm:text-xl">
+        <h3 className="font-display text-2xl leading-tight">
           <button
             type="button"
             onClick={(e) => onOpen(project, e.currentTarget)}
@@ -61,7 +70,9 @@ export function ProjectCard({ project, onOpen }: Props) {
             {title}
           </button>
         </h3>
-        <p className="mt-0.5 text-sm font-medium text-accent">{project.subtitle[lang]}</p>
+        <p className="mt-1 text-xs font-bold uppercase tracking-[0.12em] text-accent">
+          {project.subtitle[lang]}
+        </p>
         <p className="mt-3 text-pretty text-sm leading-relaxed text-muted">
           {project.summary[lang]}
         </p>

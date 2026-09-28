@@ -13,7 +13,7 @@ export function Logo() {
     >
       <span
         aria-hidden="true"
-        className="grid h-9 w-9 place-items-center rounded-[10px] bg-ink text-sm text-bg transition-transform group-hover:-rotate-6"
+        className="grid h-9 w-9 place-items-center rounded-[10px] bg-accent-strong font-display text-base text-white transition-transform group-hover:-rotate-6"
         dir="ltr"
       >
         AE

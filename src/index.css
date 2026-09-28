@@ -4,30 +4,35 @@
 
 @layer base {
   :root {
-    /* Light theme — warm paper + deep "Nile" green accent */
-    --bg: 247 246 242;
+    /* Light theme — warm white + deep red accent */
+    --bg: 246 245 243;
     --surface: 255 255 255;
-    --surface-2: 239 238 232;
-    --line: 223 221 212;
-    --ink: 17 20 18;
-    --muted: 84 92 88;
-    --accent: 10 122 104; /* #0a7a68 — 5.2:1 on white */
+    --surface-2: 236 234 231;
+    --line: 222 219 214;
+    --ink: 14 14 16;
+    --muted: 82 82 91;
+    --accent: 200 16 46; /* #c8102e — text & decoration, 5.8:1 on white */
+    --accent-strong: 200 16 46; /* button background */
     --accent-ink: 255 255 255;
-    --accent-soft: 220 241 234;
-    --accent-inv: 52 211 178; /* accent used on the inverted (ink) contact panel */
+    --accent-soft: 251 231 234;
   }
 
-  .dark {
-    --bg: 11 14 13;
-    --surface: 18 23 22;
-    --surface-2: 26 32 30;
-    --line: 40 48 46;
-    --ink: 236 239 234;
-    --muted: 160 170 165;
-    --accent: 52 211 178; /* #34d3b2 */
-    --accent-ink: 6 26 22;
-    --accent-soft: 18 52 45;
-    --accent-inv: 8 102 87;
+  /* .force-dark keeps a block dark in both themes (e.g. the contact panel). */
+  .dark,
+  .force-dark {
+    --bg: 10 10 11;
+    --surface: 20 20 22;
+    --surface-2: 28 28 31;
+    --line: 42 42 46;
+    --ink: 242 242 242;
+    --muted: 161 161 170;
+    --accent: 255 70 85; /* #ff4655 — 5.9:1 on the dark background */
+    --accent-strong: 214 22 42; /* #d6162a — white text 5.4:1 */
+    --accent-ink: 255 255 255;
+    --accent-soft: 46 14 18;
+  }
+  .force-dark {
+    color: rgb(var(--ink));
   }
 
   html {
@@ -45,6 +50,17 @@
 
   html[lang='ar'] body {
     @apply font-arabic;
+  }
+
+  /* Anton ships a single (already heavy) weight; Arabic falls back to Plex Arabic bold. */
+  .font-display {
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
+  html[lang='ar'] .font-display {
+    font-weight: 700;
+    line-height: 1.3;
   }
 
   /* Letter-spacing breaks Arabic letter joining — always reset it in Arabic. */
@@ -81,7 +97,7 @@
     @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition duration-200 disabled:opacity-60 sm:text-base;
   }
   .btn-primary {
-    @apply btn bg-accent text-accent-ink shadow-card hover:-translate-y-0.5 hover:shadow-lift active:translate-y-0;
+    @apply btn bg-accent-strong text-accent-ink shadow-card hover:-translate-y-0.5 hover:shadow-lift active:translate-y-0;
   }
   .btn-secondary {
     @apply btn border border-line bg-surface text-ink hover:-translate-y-0.5 hover:border-ink/30 active:translate-y-0;
@@ -102,7 +118,7 @@
     @apply py-16 sm:py-24 lg:py-28;
   }
   .section-title {
-    @apply mt-3 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl;
+    @apply mt-3 text-balance font-display text-4xl leading-[1.05] sm:text-5xl lg:text-6xl;
   }
   .section-lead {
     @apply mt-4 max-w-2xl text-pretty text-base leading-relaxed text-muted sm:text-lg;

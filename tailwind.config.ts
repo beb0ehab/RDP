@@ -22,7 +22,7 @@ export default {
         accent: withAlpha('--accent'),
         'accent-ink': withAlpha('--accent-ink'),
         'accent-soft': withAlpha('--accent-soft'),
-        'accent-inv': withAlpha('--accent-inv'),
+        'accent-strong': withAlpha('--accent-strong'),
       },
       fontFamily: {
         sans: [
@@ -34,6 +34,7 @@ export default {
           'Roboto',
           'sans-serif',
         ],
+        display: ['Anton', '"IBM Plex Sans Arabic"', 'Impact', 'Arial Narrow', 'sans-serif'],
         arabic: ['"IBM Plex Sans Arabic"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
       },
       boxShadow: {

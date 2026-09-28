@@ -41,9 +41,9 @@ export function Projects() {
         />
 
         <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((p) => (
+          {featured.map((p, i) => (
             <li key={p.id}>
-              <ProjectCard project={p} onOpen={open} />
+              <ProjectCard project={p} index={i} onOpen={open} />
             </li>
           ))}
         </ul>
@@ -70,9 +70,9 @@ export function Projects() {
               hidden={!showMore}
               className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 [&[hidden]]:hidden"
             >
-              {more.map((p) => (
+              {more.map((p, i) => (
                 <li key={p.id}>
-                  <ProjectCard project={p} onOpen={open} />
+                  <ProjectCard project={p} index={featured.length + i} onOpen={open} />
                 </li>
               ))}
             </ul>
