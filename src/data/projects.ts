@@ -96,6 +96,45 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: 'fbauto',
+    title: { en: 'FBAUTO', ar: 'FBAUTO' },
+    subtitle: {
+      en: 'Facebook Lead Harvesting Desktop App',
+      ar: 'تطبيق سطح مكتب لجمع العملاء المحتملين من فيسبوك',
+    },
+    summary: {
+      en: 'Windows desktop app that pulls leads from Facebook posts and groups, scores them by buying intent and exports them to Excel.',
+      ar: 'تطبيق ويندوز يجمع العملاء المحتملين من منشورات وجروبات فيسبوك، ويقيّمهم حسب نية الشراء، ويصدّرهم إلى Excel.',
+    },
+    details: {
+      en: [
+        "Collects comments from a single post or from a group's top posts, capturing structured data from Facebook's GraphQL responses through the Brave browser.",
+        'Scores every lead with buying-intent rules and Arabic-aware matching; a phone number in a comment raises the score.',
+        'Terminal-style Arabic desktop UI: paste a link, watch the harvest live, filter leads and export.',
+        'Saved-leads mini CRM: star a lead to file it into custom categories.',
+        'Excel export, raw data kept for re-parsing, a command-line interface, serial-key licensing with auto-update, and a packaged Windows build.',
+      ],
+      ar: [
+        'يجمع التعليقات من منشور واحد أو من أهم منشورات جروب، ويلتقط البيانات المنظّمة من استجابات GraphQL الخاصة بفيسبوك عبر متصفح Brave.',
+        'يقيّم كل عميل محتمل بقواعد لنية الشراء مع مطابقة تراعي اللغة العربية، ووجود رقم هاتف في التعليق يرفع التقييم.',
+        'واجهة سطح مكتب عربية بطابع الـ Terminal: ضع الرابط، وتابع الجمع لحظة بلحظة، وفلتر العملاء وصدّرهم.',
+        'نظام CRM مصغّر للعملاء المحفوظين: علّم أي عميل بنجمة ليُحفظ في تصنيفات مخصصة.',
+        'تصدير إلى Excel، وحفظ البيانات الخام لإعادة تحليلها، وواجهة أوامر (CLI)، وترخيص بمفتاح سيريال مع تحديث تلقائي، ونسخة ويندوز مجمّعة كتطبيق مستقل.',
+      ],
+    },
+    tech: [
+      'Python',
+      'Playwright (patchright)',
+      'pywebview',
+      'SQLite',
+      'SQLAlchemy',
+      'openpyxl',
+      'PHP',
+    ],
+    placeholder: { icon: 'target', from: '#7c3aed', to: '#1e1b4b' },
+    featured: true,
+  },
+  {
     id: 'ai-workspace',
     title: { en: 'AI Workspace', ar: 'AI Workspace' },
     subtitle: {
@@ -170,7 +209,7 @@ export const projects: Project[] = [
     },
     tech: ['Python', 'aiogram 3', 'async SQLAlchemy'],
     placeholder: { icon: 'send', from: '#38bdf8', to: '#1e40af' },
-    featured: true,
+    featured: false,
   },
   {
     id: 'github-power-explorer',
