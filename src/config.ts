@@ -10,7 +10,11 @@ export const site = {
 
   // TODO(Adly): paste your GitHub profile URL here, e.g. 'https://github.com/your-username'.
   // While this is empty, GitHub links are hidden automatically.
-  githubUrl: '',
+  githubUrl: '' as string,
+
+  // TODO(Adly): add a portrait photo at public/profile.webp (about 800×1000, WebP) and set this to
+  // 'profile.webp'. While it's empty, the hero shows an "AE" monogram instead of a photo.
+  photo: '' as string,
 
   // Put your CV at public/Adly_Ehab_CV.pdf — the "Download CV" buttons point to it.
   cvFile: 'Adly_Ehab_CV.pdf',

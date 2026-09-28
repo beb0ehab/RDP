@@ -109,8 +109,9 @@ GitHub Pages serves `404.html` for unknown URLs. It's a small branded page that 
 ## Tech notes
 
 - Language & theme are saved in `localStorage` (safely wrapped) and applied before first paint, so there's no flash.
-  The theme follows `prefers-color-scheme` until the visitor picks one.
+  The design is dark-first: it opens in dark mode unless the visitor switched to light.
 - Arabic switches `<html dir="rtl" lang="ar">`. Layout uses logical properties (`ms-`, `pe-`, `start-`, `end-`) so it mirrors correctly.
-- Fonts: Plus Jakarta Sans (Latin) + IBM Plex Sans Arabic from Google Fonts with `display=swap`.
+- Fonts are bundled with the site via `@fontsource` (no third-party requests, `font-display: swap`):
+  Anton (headings), Plus Jakarta Sans (text), IBM Plex Sans Arabic (Arabic), Great Vibes (signature).
 - Project details open in a native `<dialog>`, which gives keyboard focus trapping and Esc-to-close.
 - Animations are subtle and disabled with `prefers-reduced-motion`.

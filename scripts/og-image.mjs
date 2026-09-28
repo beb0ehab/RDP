@@ -22,33 +22,41 @@ const fontFaces = (
     }),
   )
 ).join('');
+const anton = await readFile(
+  join(root, 'node_modules', '@fontsource', 'anton', 'files', 'anton-latin-400-normal.woff2'),
+);
+const antonFace = `@font-face{font-family:'Anton';src:url(data:font/woff2;base64,${anton.toString('base64')}) format('woff2')}`;
 
 const ogHtml = `<!doctype html><html><head>
-<style>${fontFaces}
+<style>${fontFaces}${antonFace}
   *{box-sizing:border-box;margin:0}
-  body{width:1200px;height:630px;background:#0b0e0d;color:#eceFEA;
+  body{width:1200px;height:630px;background:#0a0a0b;color:#f2f2f2;
     font-family:'Plus Jakarta Sans',system-ui,sans-serif;position:relative;overflow:hidden}
   .grid{position:absolute;inset:0;
     background-image:linear-gradient(to right,rgba(255,255,255,.06) 1px,transparent 1px),
       linear-gradient(to bottom,rgba(255,255,255,.06) 1px,transparent 1px);
     background-size:56px 56px;
     -webkit-mask-image:radial-gradient(ellipse 80% 70% at 30% 40%,#000 30%,transparent 80%)}
+  .word{position:absolute;left:0;right:0;top:-40px;text-align:center;font-family:Anton;
+    font-size:300px;line-height:1;color:#ff4655;opacity:.9;letter-spacing:.01em;
+    -webkit-mask-image:linear-gradient(to bottom,#000 30%,transparent 90%)}
   .glow{position:absolute;width:620px;height:620px;border-radius:50%;right:-160px;top:-220px;
-    background:#34d3b2;opacity:.28;filter:blur(120px)}
+    background:#ff4655;opacity:.30;filter:blur(120px)}
   .wrap{position:relative;padding:76px 84px;height:100%;display:flex;flex-direction:column}
   .logo{display:flex;align-items:center;gap:16px;font-weight:800;font-size:28px}
-  .mark{width:56px;height:56px;border-radius:14px;background:#eceFEA;color:#0b0e0d;
-    display:grid;place-items:center;font-size:22px}
-  h1{margin-top:auto;font-size:92px;line-height:1;font-weight:800;letter-spacing:-.035em}
-  h1 span{color:#34d3b2}
-  h2{margin-top:18px;font-size:40px;font-weight:700;color:#cfd6d2}
+  .mark{width:56px;height:56px;border-radius:14px;background:#d6162a;color:#fff;
+    display:grid;place-items:center;font-family:Anton;font-weight:400;font-size:26px}
+  h1{margin-top:auto;font-family:Anton;font-weight:400;font-size:112px;line-height:1;
+    text-transform:uppercase;letter-spacing:.01em}
+  h1 span{color:#ff4655}
+  h2{margin-top:14px;font-size:34px;font-weight:700;color:#ff4655;text-transform:uppercase;
+    letter-spacing:.04em}
   .tags{display:flex;gap:12px;margin-top:40px}
   .tag{border:1.5px solid rgba(255,255,255,.18);border-radius:999px;padding:10px 20px;
     font-size:22px;font-weight:500;color:#cfd6d2}
 </style></head><body>
-<div class="grid"></div><div class="glow"></div>
+<div class="grid"></div><div class="word">PORTFOLIO</div><div class="glow"></div>
 <div class="wrap">
-  <div class="logo"><div class="mark">AE</div>Portfolio</div>
   <h1>Adly Ehab<span>.</span></h1>
   <h2>Web &amp; AI Automation Developer</h2>
   <div class="tags">
@@ -77,8 +85,9 @@ for (const [name, size] of [
     `<svg width="${size}" height="${size}" `,
   );
   await page.setContent(
-    `<html><body style="margin:0;background:transparent">${icon}</body></html>`,
+    `<html><head><style>${antonFace}</style></head><body style="margin:0;background:transparent">${icon}</body></html>`,
   );
+  await page.evaluate(() => document.fonts.ready);
   await writeFile(join(pub, name), await page.screenshot({ type: 'png', omitBackground: true }));
 }
 

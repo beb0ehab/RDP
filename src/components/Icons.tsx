@@ -145,6 +145,45 @@ export const SparklesIcon = (p: IconProps) => (
   </Stroke>
 );
 
+export const LayersIcon = (p: IconProps) => (
+  <Stroke {...p}>
+    <path d="M12 3l9 5-9 5-9-5 9-5z" />
+    <path d="M3 13l9 5 9-5" />
+  </Stroke>
+);
+export const RocketIcon = (p: IconProps) => (
+  <Stroke {...p}>
+    <path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2" />
+    <path d="M9 18l-3-3c1-4 4-9 11-11 0 7-5 10-8 14z" />
+    <circle cx="14.5" cy="9.5" r="1.5" />
+  </Stroke>
+);
+export const ClockIcon = (p: IconProps) => (
+  <Stroke {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M12 7v5l3 2" />
+  </Stroke>
+);
+export const GlobeIcon = (p: IconProps) => (
+  <Stroke {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M3 12h18M12 3c2.5 2.7 3.7 5.7 3.7 9s-1.2 6.3-3.7 9c-2.5-2.7-3.7-5.7-3.7-9S9.5 5.7 12 3z" />
+  </Stroke>
+);
+export const QuoteIcon = ({ size = 48, ...rest }: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 48 48"
+    fill="currentColor"
+    aria-hidden="true"
+    focusable="false"
+    {...rest}
+  >
+    <path d="M8 36V24c0-8 4-13 12-15l1.5 3.5C17 14 15 17 15 21h6v15H8zm19 0V24c0-8 4-13 12-15l1.5 3.5C36 14 34 17 34 21h6v15H27z" />
+  </svg>
+);
+
 // Placeholder artwork icons
 const placeholderPaths: Record<PlaceholderIcon, JSX.Element> = {
   map: (

@@ -1,4 +1,10 @@
 {
+  "fbauto": {
+    "desktop": "projects/fbauto-desktop.webp",
+    "desktopSmall": "projects/fbauto-desktop-720.webp",
+    "width": 1128,
+    "height": 705
+  },
   "kero-tours": {
     "desktop": "projects/kero-tours-desktop.webp",
     "desktopSmall": "projects/kero-tours-desktop-720.webp",

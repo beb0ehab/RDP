@@ -76,7 +76,7 @@ export function ProjectModal({ project, onClose }: Props) {
                   {project.badge[lang]}
                 </span>
               )}
-              <h2 id={titleId} className="text-2xl font-extrabold tracking-tight sm:text-3xl">
+              <h2 id={titleId} className="font-display text-3xl sm:text-4xl">
                 {project.title[lang]}
               </h2>
               <p className="mt-1 font-medium text-accent">{project.subtitle[lang]}</p>

@@ -4,7 +4,7 @@ import en from '../i18n/en';
 import ar from '../i18n/ar';
 import type { Dictionary } from '../i18n/en';
 import type { Lang, Theme } from '../types';
-import { readStorage, writeStorage } from '../lib/storage';
+import { writeStorage } from '../lib/storage';
 
 const dictionaries: Record<Lang, Dictionary> = { en, ar };
 
@@ -18,7 +18,7 @@ interface PreferencesValue {
 
 const PreferencesContext = createContext<PreferencesValue | null>(null);
 
-// index.html already applied the saved (or system) theme and language before first paint,
+// index.html already applied the saved theme (dark by default) and language before first paint,
 // so we read the initial state back from <html> to stay in sync.
 const initialTheme = (): Theme =>
   document.documentElement.classList.contains('dark') ? 'dark' : 'light';
@@ -33,18 +33,6 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
     root.classList.toggle('dark', theme === 'dark');
     root.style.colorScheme = theme;
   }, [theme]);
-
-  // Follow the OS theme until the visitor picks one explicitly.
-  useEffect(() => {
-    const mq = window.matchMedia?.('(prefers-color-scheme: dark)');
-    if (!mq) return;
-    const onChange = (e: MediaQueryListEvent) => {
-      const saved = readStorage('theme');
-      if (saved !== 'light' && saved !== 'dark') setTheme(e.matches ? 'dark' : 'light');
-    };
-    mq.addEventListener?.('change', onChange);
-    return () => mq.removeEventListener?.('change', onChange);
-  }, []);
 
   useEffect(() => {
     const root = document.documentElement;

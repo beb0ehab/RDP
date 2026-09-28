@@ -3,7 +3,7 @@ import { projects } from '../data/projects';
 import { usePreferences } from '../context/Preferences';
 import { useReveal } from '../hooks/useReveal';
 import type { Project } from '../types';
-import { ChevronDownIcon } from './Icons';
+import { ArrowIcon } from './Icons';
 import { ProjectCard } from './ProjectCard';
 import { ProjectModal } from './ProjectModal';
 import { SectionHeading } from './SectionHeading';
@@ -30,53 +30,52 @@ export function Projects() {
     requestAnimationFrame(() => triggerRef.current?.focus());
   }, []);
 
-  return (
-    <section id="projects" className="section" aria-labelledby="projects-title">
-      <div className="container">
-        <SectionHeading
-          id="projects-title"
-          eyebrow={t.projects.eyebrow}
-          title={t.projects.title}
-          lead={t.projects.lead}
+  const toggle =
+    more.length > 0 ? (
+      <button
+        type="button"
+        className="inline-flex min-h-[44px] items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-muted transition-colors hover:text-accent"
+        aria-expanded={showMore}
+        aria-controls="more-projects"
+        onClick={() => setShowMore((v) => !v)}
+      >
+        {showMore ? t.projects.moreHide : t.projects.moreShow}
+        <ArrowIcon
+          size={16}
+          className={`text-accent transition-transform rtl:-scale-x-100 ${showMore ? '-rotate-90' : 'rotate-90'}`}
         />
+      </button>
+    ) : null;
 
-        <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((p) => (
+  return (
+    <section
+      id="projects"
+      className="border-b border-line py-16 sm:py-20"
+      aria-labelledby="projects-title"
+    >
+      <div className="container">
+        <SectionHeading id="projects-title" title={t.projects.title} action={toggle} />
+
+        <ul className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          {featured.map((p, i) => (
             <li key={p.id}>
-              <ProjectCard project={p} onOpen={open} />
+              <ProjectCard project={p} index={i} onOpen={open} />
             </li>
           ))}
         </ul>
 
         {more.length > 0 && (
-          <div className="mt-10">
-            <div className="flex justify-center">
-              <button
-                type="button"
-                className="btn-secondary"
-                aria-expanded={showMore}
-                aria-controls="more-projects"
-                onClick={() => setShowMore((v) => !v)}
-              >
-                {showMore ? t.projects.moreHide : `${t.projects.moreShow} (${more.length})`}
-                <ChevronDownIcon
-                  size={18}
-                  className={`transition-transform ${showMore ? 'rotate-180' : ''}`}
-                />
-              </button>
-            </div>
-            <ul
-              id="more-projects"
-              hidden={!showMore}
-              className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 [&[hidden]]:hidden"
-            >
-              {more.map((p) => (
-                <li key={p.id}>
-                  <ProjectCard project={p} onOpen={open} />
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul
+            id="more-projects"
+            hidden={!showMore}
+            className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 [&[hidden]]:hidden"
+          >
+            {more.map((p, i) => (
+              <li key={p.id}>
+                <ProjectCard project={p} index={featured.length + i} onOpen={open} />
+              </li>
+            ))}
+          </ul>
         )}
       </div>
 

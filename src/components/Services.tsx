@@ -4,40 +4,35 @@ import { SectionHeading } from './SectionHeading';
 
 const icons = [StoreIcon, DashboardIcon, BotIcon, SparklesIcon];
 
+/** Compact 4-column services strip. */
 export function Services() {
   const { t } = usePreferences();
 
   return (
     <section
       id="services"
-      className="section border-y border-line bg-surface-2/50"
+      className="border-b border-line py-16 sm:py-20"
       aria-labelledby="services-title"
     >
       <div className="container">
-        <SectionHeading
-          id="services-title"
-          eyebrow={t.services.eyebrow}
-          title={t.services.title}
-          lead={t.services.lead}
-        />
+        <SectionHeading id="services-title" title={t.services.title} />
 
-        <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-10 grid border-line sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-line rtl:lg:divide-x-reverse">
           {t.services.items.map((s, i) => {
             const Icon = icons[i];
             return (
               <li
                 key={s.title}
-                className="reveal group flex flex-col rounded-2xl border border-line bg-surface p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-lift motion-reduce:hover:translate-y-0"
-                style={{ transitionDelay: `${i * 60}ms` }}
+                className="reveal border-b border-line py-6 last:border-b-0 sm:odd:pe-6 sm:even:ps-6 lg:border-b-0 lg:px-6 lg:first:ps-0 lg:last:pe-0"
               >
-                <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent-soft text-accent transition-transform group-hover:-rotate-6">
-                  <Icon size={24} />
+                <span className="grid h-11 w-11 place-items-center rounded-full border-2 border-accent text-accent">
+                  <Icon size={19} />
                 </span>
-                <h3 className="mt-5 text-lg font-bold">{s.title}</h3>
-                <p className="mt-2 flex-1 text-pretty text-sm leading-relaxed text-muted">
-                  {s.text}
+                <h3 className="mt-4 font-display text-xl">{s.title}</h3>
+                <p className="mt-2 text-pretty text-sm leading-relaxed text-muted">{s.text}</p>
+                <p className="mt-3 text-xs font-bold uppercase tracking-[0.12em] text-accent">
+                  {s.example}
                 </p>
-                <p className="mt-4 text-xs font-semibold text-ink/70">{s.example}</p>
               </li>
             );
           })}
