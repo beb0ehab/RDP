@@ -5,6 +5,7 @@
     "width": 1440,
     "height": 900,
     "mobile": "projects/kero-tours-mobile.webp",
+    "mobileSmall": "projects/kero-tours-mobile-195.webp",
     "mobileWidth": 390,
     "mobileHeight": 844
   },
@@ -14,6 +15,7 @@
     "width": 1440,
     "height": 900,
     "mobile": "projects/leadora-mobile.webp",
+    "mobileSmall": "projects/leadora-mobile-195.webp",
     "mobileWidth": 390,
     "mobileHeight": 844
   },

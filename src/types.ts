@@ -34,6 +34,7 @@ export interface ScreenshotEntry {
   width: number;
   height: number;
   mobile?: string;
+  mobileSmall?: string;
   mobileWidth?: number;
   mobileHeight?: number;
 }

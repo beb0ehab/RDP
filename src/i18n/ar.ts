@@ -15,7 +15,7 @@ const ar: Dictionary = {
     switchToLight: 'التبديل إلى الوضع الفاتح',
     switchLanguage: 'Switch to English',
     mainNav: 'الرئيسية',
-    home: 'عدلي إيهاب — العودة للأعلى',
+    home: 'العودة للأعلى',
     close: 'إغلاق',
     opensInNewTab: '(يفتح في تبويب جديد)',
   },

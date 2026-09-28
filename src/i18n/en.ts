@@ -13,7 +13,7 @@ const en = {
     switchToLight: 'Switch to light theme',
     switchLanguage: 'التبديل إلى العربية',
     mainNav: 'Main',
-    home: 'Adly Ehab — back to top',
+    home: 'back to top',
     close: 'Close',
     opensInNewTab: '(opens in a new tab)',
   },
@@ -22,7 +22,7 @@ const en = {
     services: 'Services',
     about: 'About',
     contact: 'Contact',
-    langShort: 'ع',
+    langShort: 'عربي',
     langLabel: 'العربية',
   },
   hero: {

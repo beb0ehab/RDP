@@ -28,7 +28,11 @@ export function ProjectCard({ project, onOpen }: Props) {
         {mobile && shot && (
           <div className="absolute bottom-3 end-3 w-[22%] overflow-hidden rounded-[10px] border-[3px] border-ink/90 bg-ink shadow-lift">
             <img
-              src={asset(mobile)}
+              src={asset(shot.mobileSmall ?? mobile)}
+              {...(shot.mobileSmall && {
+                srcSet: `${asset(shot.mobileSmall)} 195w, ${asset(mobile)} 390w`,
+                sizes: '90px',
+              })}
               width={shot.mobileWidth}
               height={shot.mobileHeight}
               alt={`${title} — ${t.projects.mobileShot}`}

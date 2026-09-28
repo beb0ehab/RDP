@@ -7,7 +7,7 @@
  * Output (public/projects/):
  *   <id>-desktop.webp      1440×900
  *   <id>-desktop-720.webp  720×450 (used on cards)
- *   <id>-mobile.webp       390×844 (only for ids in MOBILE_IDS)
+ *   <id>-mobile.webp       390×844 (only for ids in MOBILE_IDS) + <id>-mobile-195.webp thumbnail
  * and src/data/screenshots.json, which the site reads to swap placeholders for real images.
  */
 import { chromium } from 'playwright';
@@ -102,8 +102,13 @@ for (const { id, url } of selected) {
         .resize(390, 844)
         .webp({ quality: 80 })
         .toFile(join(outDir, `${id}-mobile.webp`));
+      await sharp(mobile)
+        .resize(195, 422)
+        .webp({ quality: 78 })
+        .toFile(join(outDir, `${id}-mobile-195.webp`));
       Object.assign(entry, {
         mobile: `projects/${id}-mobile.webp`,
+        mobileSmall: `projects/${id}-mobile-195.webp`,
         mobileWidth: 390,
         mobileHeight: 844,
       });

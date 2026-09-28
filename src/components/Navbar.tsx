@@ -10,7 +10,6 @@ export function Logo() {
     <a
       href="#top"
       className="group inline-flex min-h-[44px] items-center gap-2.5 rounded-lg font-extrabold tracking-tight"
-      aria-label={t.a11y.home}
     >
       <span
         aria-hidden="true"
@@ -20,6 +19,7 @@ export function Logo() {
         AE
       </span>
       <span className="text-base sm:text-lg">{t.hero.name}</span>
+      <span className="sr-only"> — {t.a11y.home}</span>
     </a>
   );
 }
@@ -32,7 +32,7 @@ function Toggles() {
         type="button"
         onClick={toggleLang}
         className="icon-btn w-auto min-w-11 px-3 text-sm font-bold"
-        aria-label={t.a11y.switchLanguage}
+        aria-label={`${t.nav.langShort} — ${t.a11y.switchLanguage}`}
         title={t.nav.langLabel}
         lang={lang === 'en' ? 'ar' : 'en'}
       >
