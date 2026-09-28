@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Adly Ehab — Web & AI Automation Developer</title>
+    <meta
+      name="description"
+      content="Adly Ehab builds websites, online stores and web systems, and connects them to AI and automation. Based in Cairo, Egypt, open to remote work."
+    />
+    <link rel="canonical" href="%VITE_SITE_URL%" />
+    <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b0e0d" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Adly Ehab" />
+    <meta property="og:title" content="Adly Ehab — Web & AI Automation Developer" />
+    <meta
+      property="og:description"
+      content="Websites, online stores, CRM systems, bots and AI automation. See my projects and get in touch."
+    />
+    <meta property="og:url" content="%VITE_SITE_URL%" />
+    <meta property="og:image" content="%VITE_SITE_URL%og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Adly Ehab — Web & AI Automation Developer" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ar_EG" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Adly Ehab — Web & AI Automation Developer" />
+    <meta
+      name="twitter:description"
+      content="Websites, online stores, CRM systems, bots and AI automation. See my projects and get in touch."
+    />
+    <meta name="twitter:image" content="%VITE_SITE_URL%og-image.png" />
+
+    <link rel="icon" href="%BASE_URL%favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="%BASE_URL%favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+
+    <!-- Fonts: Plus Jakarta Sans (Latin) + IBM Plex Sans Arabic (Arabic), font-display: swap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adly Ehab",
+        "jobTitle": "Web & AI Automation Developer",
+        "email": "mailto:adlyehabdev@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
+        "sameAs": ["https://linkedin.com/in/adly-ehab-dev"]
+      }
+    </script>
+
+    <!-- Apply saved theme/language before first paint (prevents a flash). -->
+    <script>
+      (function () {
+        var d = document.documentElement;
+        var theme = null;
+        var lang = null;
+        try {
+          theme = localStorage.getItem('theme');
+          lang = localStorage.getItem('lang');
+        } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme =
+            window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+        }
+        if (theme === 'dark') d.classList.add('dark');
+        d.style.colorScheme = theme;
+        if (lang === 'ar') {
+          d.lang = 'ar';
+          d.dir = 'rtl';
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding: 2rem; font-family: system-ui, sans-serif">
+        Adly Ehab — Web & AI Automation Developer. Email:
+        <a href="mailto:adlyehabdev@gmail.com">adlyehabdev@gmail.com</a> · WhatsApp:
+        <a href="https://wa.me/201063529309">+20 106 352 9309</a>
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

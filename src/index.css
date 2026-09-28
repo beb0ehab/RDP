@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme — warm paper + deep "Nile" green accent */
+    --bg: 247 246 242;
+    --surface: 255 255 255;
+    --surface-2: 239 238 232;
+    --line: 223 221 212;
+    --ink: 17 20 18;
+    --muted: 84 92 88;
+    --accent: 10 122 104; /* #0a7a68 — 5.2:1 on white */
+    --accent-ink: 255 255 255;
+    --accent-soft: 220 241 234;
+    --accent-inv: 52 211 178; /* accent used on the inverted (ink) contact panel */
+  }
+
+  .dark {
+    --bg: 11 14 13;
+    --surface: 18 23 22;
+    --surface-2: 26 32 30;
+    --line: 40 48 46;
+    --ink: 236 239 234;
+    --muted: 160 170 165;
+    --accent: 52 211 178; /* #34d3b2 */
+    --accent-ink: 6 26 22;
+    --accent-soft: 18 52 45;
+    --accent-inv: 8 102 87;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-bg font-sans text-ink antialiased;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+  }
+
+  html[lang='ar'] body {
+    @apply font-arabic;
+  }
+
+  /* Letter-spacing breaks Arabic letter joining — always reset it in Arabic. */
+  html[lang='ar'] * {
+    letter-spacing: 0 !important;
+  }
+
+  ::selection {
+    background: rgb(var(--accent) / 0.25);
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition duration-200 disabled:opacity-60 sm:text-base;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-accent-ink shadow-card hover:-translate-y-0.5 hover:shadow-lift active:translate-y-0;
+  }
+  .btn-secondary {
+    @apply btn border border-line bg-surface text-ink hover:-translate-y-0.5 hover:border-ink/30 active:translate-y-0;
+  }
+  .btn-ghost {
+    @apply btn text-ink hover:bg-surface-2;
+  }
+  .icon-btn {
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-surface text-ink transition hover:border-ink/30;
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full border border-line bg-surface-2/60 px-3 py-1 text-xs font-medium text-muted;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-accent;
+  }
+  .section {
+    @apply py-16 sm:py-24 lg:py-28;
+  }
+  .section-title {
+    @apply mt-3 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl;
+  }
+  .section-lead {
+    @apply mt-4 max-w-2xl text-pretty text-base leading-relaxed text-muted sm:text-lg;
+  }
+
+  /* Scroll reveal — only hides content once JS confirmed it can reveal it again. */
+  .js-reveal .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .js-reveal .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .js-reveal .reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgb(var(--line) / 0.55) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--line) / 0.55) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
