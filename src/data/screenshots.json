@@ -1,1 +1,26 @@
-{}
+{
+  "kero-tours": {
+    "desktop": "projects/kero-tours-desktop.webp",
+    "desktopSmall": "projects/kero-tours-desktop-720.webp",
+    "width": 1440,
+    "height": 900,
+    "mobile": "projects/kero-tours-mobile.webp",
+    "mobileWidth": 390,
+    "mobileHeight": 844
+  },
+  "leadora": {
+    "desktop": "projects/leadora-desktop.webp",
+    "desktopSmall": "projects/leadora-desktop-720.webp",
+    "width": 1440,
+    "height": 900,
+    "mobile": "projects/leadora-mobile.webp",
+    "mobileWidth": 390,
+    "mobileHeight": 844
+  },
+  "volume4t": {
+    "desktop": "projects/volume4t-desktop.webp",
+    "desktopSmall": "projects/volume4t-desktop-720.webp",
+    "width": 1440,
+    "height": 900
+  }
+}
