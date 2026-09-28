@@ -1,0 +1,223 @@
+import type { Project } from '../types';
+
+/**
+ * All portfolio projects. Order = importance (first = most important).
+ *
+ * - `featured: true`  → main grid
+ * - `featured: false` → hidden under the "More projects" toggle
+ * - `url`             → shows a "Live site" button (and lets `npm run screenshots` capture it)
+ *
+ * Screenshots are picked up automatically from src/data/screenshots.json
+ * (written by `npm run screenshots`). Projects without one show the branded placeholder.
+ */
+export const projects: Project[] = [
+  {
+    id: 'kero-tours',
+    title: { en: 'Kero Tours', ar: 'Kero Tours' },
+    subtitle: { en: 'Tour Booking Website', ar: 'موقع حجز رحلات سياحية' },
+    badge: { en: 'Client project', ar: 'مشروع لعميل' },
+    summary: {
+      en: 'Tour booking website built and delivered for a paying client, a Hurghada tour operator.',
+      ar: 'موقع لحجز الرحلات السياحية نفّذته وسلّمته لعميل حقيقي، شركة رحلات في الغردقة.',
+    },
+    details: {
+      en: [
+        'Built and delivered for a paying client, a Hurghada tour operator.',
+        '30+ trips across sea, desert, entertainment and historical categories, plus bundled packages.',
+        'One-tap WhatsApp booking on every trip.',
+        'Clear per-person, group and area-based pricing.',
+      ],
+      ar: [
+        'نفّذته وسلّمته لعميل حقيقي، شركة تنظّم رحلات في الغردقة.',
+        'أكثر من 30 رحلة موزّعة بين البحر والصحراء والترفيه والأماكن التاريخية، إلى جانب باقات مجمّعة.',
+        'حجز بضغطة واحدة عبر واتساب على كل رحلة.',
+        'أسعار واضحة للفرد وللمجموعات وحسب المنطقة.',
+      ],
+    },
+    tech: ['React', 'Vite'],
+    url: 'https://kerotourshurghada.com',
+    placeholder: { icon: 'map', from: '#0ea5b7', to: '#1e3a8a' },
+    featured: true,
+  },
+  {
+    id: 'leadora',
+    title: { en: 'LEADORA', ar: 'LEADORA' },
+    subtitle: { en: 'CRM for Arabic Sales Teams', ar: 'نظام CRM لفرق المبيعات العربية' },
+    summary: {
+      en: 'Seven-stage sales pipeline, multi-channel lead intake and role-based executive dashboards. Arabic-first (RTL).',
+      ar: 'مسار مبيعات من سبع مراحل، واستقبال العملاء المحتملين من أكثر من قناة، ولوحات تحكم للإدارة حسب الصلاحيات. بالعربية أولًا.',
+    },
+    details: {
+      en: [
+        'Seven-stage sales pipeline.',
+        'Multi-channel lead intake.',
+        'Attendance, payroll and role-based executive dashboards.',
+        'Commission is calculated the moment a demo is logged.',
+        'Arabic-first (RTL) UI with an English toggle.',
+      ],
+      ar: [
+        'مسار مبيعات من سبع مراحل.',
+        'استقبال العملاء المحتملين من قنوات متعددة.',
+        'الحضور والانصراف والرواتب، ولوحات تحكم للإدارة حسب الصلاحيات.',
+        'حساب العمولة لحظة تسجيل العرض التجريبي (الديمو).',
+        'واجهة عربية أولًا (من اليمين لليسار) مع إمكانية التحويل للإنجليزية.',
+      ],
+    },
+    tech: ['PHP', 'MySQL', 'JavaScript'],
+    url: 'https://leadora-crm.com',
+    placeholder: { icon: 'pipeline', from: '#7c3aed', to: '#0f172a' },
+    featured: true,
+  },
+  {
+    id: 'volume4t',
+    title: { en: 'Volume 4T', ar: 'Volume 4T' },
+    subtitle: { en: 'Company Website & CRM', ar: 'موقع شركة ونظام CRM' },
+    summary: {
+      en: 'Company website with an integrated CRM tracking 500+ leads a day, plus an LLM assistant for the CEO.',
+      ar: 'موقع شركة مع نظام CRM متكامل يتابع أكثر من 500 عميل محتمل يوميًا، ومساعد ذكاء اصطناعي للمدير التنفيذي.',
+    },
+    details: {
+      en: [
+        'Company website with an integrated CRM tracking 500+ leads a day.',
+        'Role-based access for sales reps, team leaders and the CEO.',
+        'Automated attendance, payroll and commission.',
+        'An LLM assistant lets the CEO ask about company finances in plain language.',
+      ],
+      ar: [
+        'موقع للشركة مع نظام CRM متكامل يتابع أكثر من 500 عميل محتمل يوميًا.',
+        'صلاحيات مختلفة لمندوبي المبيعات وقادة الفرق والمدير التنفيذي.',
+        'أتمتة الحضور والرواتب والعمولات.',
+        'مساعد يعمل بنموذج لغوي (LLM) يتيح للمدير التنفيذي السؤال عن الأرقام المالية للشركة بلغة عادية.',
+      ],
+    },
+    tech: ['PHP', 'JavaScript', 'MySQL', 'LLM API'],
+    url: 'https://volume4t.com',
+    placeholder: { icon: 'building', from: '#f59e0b', to: '#9a3412' },
+    featured: true,
+  },
+  {
+    id: 'ai-workspace',
+    title: { en: 'AI Workspace', ar: 'AI Workspace' },
+    subtitle: {
+      en: 'Local-First Knowledge & Agent Desktop App',
+      ar: 'تطبيق سطح مكتب للمعرفة والوكلاء، يعمل محليًا أولًا',
+    },
+    summary: {
+      en: 'Connects notes, files, tasks and sources into one knowledge graph. AI agents enhance it but are never required.',
+      ar: 'يربط الملاحظات والملفات والمهام والمصادر في شبكة معرفة واحدة. وكلاء الذكاء الاصطناعي يضيفون له قيمة، لكنه يعمل بدونهم.',
+    },
+    details: {
+      en: [
+        'Connects notes, files, tasks and sources into one knowledge graph.',
+        'Backlinks and revision history.',
+        'AI agents enhance it but are never required.',
+        'Verified backup/restore and integrity checks.',
+      ],
+      ar: [
+        'يربط الملاحظات والملفات والمهام والمصادر في شبكة معرفة واحدة.',
+        'روابط عكسية (Backlinks) وسجل كامل للتعديلات.',
+        'وكلاء الذكاء الاصطناعي يحسّنون التجربة، لكن التطبيق لا يعتمد عليهم.',
+        'نسخ احتياطي واستعادة مع التحقق منهما، وفحوصات لسلامة البيانات.',
+      ],
+    },
+    tech: ['Electron', 'SQLite', 'LLM'],
+    placeholder: { icon: 'graph', from: '#10b981', to: '#064e3b' },
+    featured: true,
+  },
+  {
+    id: 'arabic-voice',
+    title: { en: 'Arabic Voice Regeneration Tool', ar: 'أداة إعادة توليد الصوت العربي' },
+    subtitle: { en: 'Speech → Text → Neural Voice', ar: 'من الكلام إلى النص إلى صوت طبيعي' },
+    summary: {
+      en: 'Records Arabic speech, transcribes it and regenerates it in a natural neural voice.',
+      ar: 'تسجّل الكلام العربي، وتحوّله إلى نص، ثم تعيد توليده بصوت طبيعي باستخدام الشبكات العصبية.',
+    },
+    details: {
+      en: [
+        'Records Arabic speech, transcribes it and regenerates it in a natural neural voice.',
+        'Audio cleanup.',
+        'Automatic fallback to a secondary engine.',
+      ],
+      ar: [
+        'تسجّل الكلام العربي، وتحوّله إلى نص، ثم تعيد توليده بصوت طبيعي.',
+        'تنقية الصوت وتحسينه.',
+        'تحويل تلقائي إلى محرّك احتياطي عند الحاجة.',
+      ],
+    },
+    tech: ['Python', 'Speech recognition', 'Neural TTS'],
+    placeholder: { icon: 'mic', from: '#ec4899', to: '#581c87' },
+    featured: true,
+  },
+  {
+    id: 'pilotvbot',
+    title: { en: 'PilotVBot', ar: 'PilotVBot' },
+    subtitle: { en: 'Telegram Bot', ar: 'بوت تيليجرام' },
+    summary: {
+      en: 'Arabic Telegram bot with referral registration, admin approval and automatic content delivery.',
+      ar: 'بوت تيليجرام عربي بتسجيل عن طريق الإحالة، وموافقة من الإدارة، وتوصيل تلقائي للمحتوى.',
+    },
+    details: {
+      en: [
+        'Arabic Telegram bot with referral registration.',
+        'Admin approval and automatic content delivery.',
+        'Runs on cheap shared hosting.',
+      ],
+      ar: [
+        'بوت تيليجرام عربي بنظام تسجيل عن طريق الإحالة.',
+        'موافقة من الإدارة، وتوصيل تلقائي للمحتوى.',
+        'يعمل على استضافة مشتركة منخفضة التكلفة.',
+      ],
+    },
+    tech: ['Python', 'aiogram 3', 'async SQLAlchemy'],
+    placeholder: { icon: 'send', from: '#38bdf8', to: '#1e40af' },
+    featured: true,
+  },
+  {
+    id: 'github-power-explorer',
+    title: { en: 'GitHub Power Explorer', ar: 'GitHub Power Explorer' },
+    subtitle: { en: 'LLM-powered GitHub search', ar: 'بحث في GitHub بالذكاء الاصطناعي' },
+    summary: {
+      en: 'Uses an LLM to turn Arabic project descriptions into GitHub searches and ranks results by relevance.',
+      ar: 'يستخدم نموذجًا لغويًا لتحويل وصف المشروع بالعربية إلى عمليات بحث في GitHub، ويرتّب النتائج حسب الصلة.',
+    },
+    details: {
+      en: [
+        'Uses an LLM to turn Arabic project descriptions into GitHub searches.',
+        'Runs the searches in parallel.',
+        'Ranks results by relevance.',
+      ],
+      ar: [
+        'يستخدم نموذجًا لغويًا لتحويل وصف المشروع بالعربية إلى عمليات بحث في GitHub.',
+        'ينفّذ عمليات البحث بالتوازي.',
+        'يرتّب النتائج حسب مدى صلتها بالمطلوب.',
+      ],
+    },
+    tech: ['Flask', 'GitHub API', 'Llama 3.3'],
+    placeholder: { icon: 'search', from: '#64748b', to: '#0f172a' },
+    featured: false,
+  },
+  {
+    id: 'buying-intent',
+    title: { en: 'Arabic Buying-Intent Scoring Engine', ar: 'محرّك تقييم نية الشراء بالعربية' },
+    subtitle: { en: 'NLP for social posts', ar: 'معالجة لغة طبيعية للمنشورات' },
+    summary: {
+      en: 'Ranks social posts by real buying intent instead of engagement.',
+      ar: 'يرتّب منشورات السوشيال ميديا حسب نية الشراء الحقيقية بدلًا من التفاعل.',
+    },
+    details: {
+      en: [
+        'Ranks social posts by real buying intent instead of engagement.',
+        'Arabic text normalization.',
+        'Word-boundary matching.',
+      ],
+      ar: [
+        'يرتّب منشورات السوشيال ميديا حسب نية الشراء الحقيقية بدلًا من التفاعل.',
+        'توحيد وتطبيع النص العربي.',
+        'مطابقة دقيقة على حدود الكلمات.',
+      ],
+    },
+    tech: ['Python', 'NLP'],
+    placeholder: { icon: 'target', from: '#ef4444', to: '#7c2d12' },
+    featured: false,
+  },
+];

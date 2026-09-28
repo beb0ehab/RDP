@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://beb0ehab.github.io/RDP/sitemap.xml
