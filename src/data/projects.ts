@@ -213,6 +213,40 @@ export const projects: Project[] = [
     featured: false,
   },
   {
+    id: 'sco4m',
+    title: { en: 'SCO4M', ar: 'SCO4M' },
+    subtitle: {
+      en: 'Social Media Services Platform (SMM Panel)',
+      ar: 'منصة خدمات سوشيال ميديا (SMM Panel)',
+    },
+    summary: {
+      en: 'An Arabic-first platform for ordering social media services across Instagram, TikTok, YouTube and more, with automatic order dispatch, balance tracking and an API for resellers.',
+      ar: 'منصة عربية لطلب خدمات السوشيال ميديا لإنستجرام وتيك توك ويوتيوب وغيرها، مع إرسال أوتوماتيك للطلبات، ورصيد محسوب، وواجهة API للموزّعين.',
+    },
+    details: {
+      en: [
+        'Service catalogue across many platforms (Instagram, TikTok, YouTube, Telegram, Facebook, X and more).',
+        'Orders are sent to the provider automatically after payment, with status tracking from the dashboard.',
+        'Any unfilled quantity is refunded to the user balance automatically.',
+        'Reseller API compatible with the SMM API v2 standard.',
+        'Balance top-up via Vodafone Cash with transfer-proof review.',
+        'Arabic-first interface with an English version.',
+      ],
+      ar: [
+        'كتالوج خدمات لمنصات كتير (إنستجرام، تيك توك، يوتيوب، تيليجرام، فيسبوك، X وغيرها).',
+        'الطلب بيتبعت للمزوّد تلقائيًا بعد الدفع، مع متابعة الحالة من لوحة التحكم.',
+        'أي كمية لم تُنفّذ بترجع لرصيد المستخدم تلقائيًا.',
+        'واجهة API للموزّعين متوافقة مع معيار SMM API v2.',
+        'شحن الرصيد بفودافون كاش مع مراجعة إثبات التحويل.',
+        'واجهة بالعربية أولًا مع نسخة إنجليزية.',
+      ],
+    },
+    tech: ['Web platform', 'SMM API v2', 'Arabic / English'],
+    url: 'https://sco4m.com',
+    placeholder: { icon: 'target', from: '#e11d48', to: '#18181b' },
+    featured: false,
+  },
+  {
     id: 'x-marketing-scraper',
     title: { en: 'X Engine', ar: 'X Engine' },
     subtitle: {

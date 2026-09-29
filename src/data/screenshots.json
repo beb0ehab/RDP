@@ -31,6 +31,16 @@
     "mobileWidth": 390,
     "mobileHeight": 844
   },
+  "sco4m": {
+    "desktop": "projects/sco4m-desktop.webp",
+    "desktopSmall": "projects/sco4m-desktop-720.webp",
+    "width": 1440,
+    "height": 900,
+    "mobile": "projects/sco4m-mobile.webp",
+    "mobileSmall": "projects/sco4m-mobile-195.webp",
+    "mobileWidth": 390,
+    "mobileHeight": 844
+  },
   "telegram-members-manager": {
     "desktop": "projects/telegram-members-manager-desktop.webp",
     "desktopSmall": "projects/telegram-members-manager-desktop-720.webp",
