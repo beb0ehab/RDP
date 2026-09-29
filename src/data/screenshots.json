@@ -25,6 +25,12 @@
     "mobileWidth": 390,
     "mobileHeight": 844
   },
+  "telegram-members-manager": {
+    "desktop": "projects/telegram-members-manager-desktop.webp",
+    "desktopSmall": "projects/telegram-members-manager-desktop-720.webp",
+    "width": 1440,
+    "height": 900
+  },
   "volume4t": {
     "desktop": "projects/volume4t-desktop.webp",
     "desktopSmall": "projects/volume4t-desktop-720.webp",
