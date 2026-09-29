@@ -55,6 +55,7 @@ const en = {
     lead: 'Real products for clients and businesses — from booking websites to CRMs, bots and AI tools. Tap a project for the full details.',
     liveSite: 'Live site',
     details: 'Details',
+    productPage: 'Product page',
     viewDetails: 'View details for',
     moreShow: 'View all projects',
     moreHide: 'Show fewer',

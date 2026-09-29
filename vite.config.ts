@@ -16,7 +16,12 @@ export default defineConfig({
     cssTarget: ['chrome80', 'safari13', 'firefox78', 'edge88'],
     rollupOptions: {
       // 404.html is served by GitHub Pages for any unknown URL.
-      input: { main: resolve(__dirname, 'index.html'), notFound: resolve(__dirname, '404.html') },
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        notFound: resolve(__dirname, '404.html'),
+        // FBAUTO product landing page → /<base>/fbauto/
+        fbauto: resolve(__dirname, 'fbauto/index.html'),
+      },
     },
   },
 });
