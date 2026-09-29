@@ -21,9 +21,8 @@ const isReady = /^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(WHATSAPP_URL);
 document.querySelectorAll<HTMLAnchorElement>('a[data-wa]').forEach((link) => {
   if (!isReady) return; // until the link is set, buttons scroll to the contact section
   const text = link.dataset.wa?.trim();
-  const url = new URL(WHATSAPP_URL);
-  if (text) url.searchParams.set('text', text);
-  link.href = url.toString();
+  // encodeURIComponent (spaces → %20): WhatsApp may show "+" literally.
+  link.href = text ? `${WHATSAPP_URL}?text=${encodeURIComponent(text)}` : WHATSAPP_URL;
   link.target = '_blank';
   link.rel = 'noopener';
 });
