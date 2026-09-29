@@ -4,7 +4,7 @@ import { SectionHeading } from './SectionHeading';
 
 const icons = [StoreIcon, DashboardIcon, BotIcon, SparklesIcon];
 
-/** Compact 4-column services strip. */
+/** Four equal service cards; the "from my work" chips always sit on the same line. */
 export function Services() {
   const { t } = usePreferences();
 
@@ -15,24 +15,57 @@ export function Services() {
       aria-labelledby="services-title"
     >
       <div className="container">
-        <SectionHeading id="services-title" title={t.services.title} />
+        <SectionHeading id="services-title" title={t.services.title} lead={t.services.lead} />
 
-        <ul className="mt-10 grid border-line sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-line rtl:lg:divide-x-reverse">
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {t.services.items.map((s, i) => {
             const Icon = icons[i];
             return (
               <li
                 key={s.title}
-                className="reveal border-b border-line py-6 last:border-b-0 sm:odd:pe-6 sm:even:ps-6 lg:border-b-0 lg:px-6 lg:first:ps-0 lg:last:pe-0"
+                className="reveal group relative flex flex-col overflow-hidden rounded-md border border-line bg-surface p-6 transition duration-300 hover:-translate-y-1 hover:border-accent/70 hover:shadow-[0_18px_40px_-18px_rgb(var(--accent)/0.55)] motion-reduce:hover:translate-y-0"
               >
-                <span className="grid h-11 w-11 place-items-center rounded-full border-2 border-accent text-accent">
-                  <Icon size={19} />
-                </span>
-                <h3 className="mt-4 font-display text-xl">{s.title}</h3>
-                <p className="mt-2 text-pretty text-sm leading-relaxed text-muted">{s.text}</p>
-                <p className="mt-3 text-xs font-bold uppercase tracking-[0.12em] text-accent">
-                  {s.example}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -end-10 -top-10 h-32 w-32 rounded-full bg-accent/0 blur-2xl transition-colors duration-300 group-hover:bg-accent/25"
+                />
+                <div className="relative flex items-center justify-between">
+                  <span className="grid h-12 w-12 place-items-center rounded-full border-2 border-accent text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-white">
+                    <Icon size={20} />
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    dir="ltr"
+                    className="font-display text-3xl leading-none text-ink/15 transition-colors group-hover:text-accent/60"
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                </div>
+
+                <h3 className="relative mt-5 font-display text-xl leading-snug">{s.title}</h3>
+                <p className="relative mt-2 flex-1 text-pretty text-sm leading-relaxed text-muted">
+                  {s.text}
                 </p>
+
+                <div className="relative mt-5 border-t border-line pt-4">
+                  <p className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-accent">
+                    {t.services.examplesLabel}
+                  </p>
+                  <ul
+                    className="mt-2 flex flex-wrap content-start gap-1.5 lg:min-h-[3.4rem]"
+                    aria-label={t.services.examplesLabel}
+                  >
+                    {s.examples.map((name) => (
+                      <li
+                        key={name}
+                        dir="ltr"
+                        className="rounded-sm border border-line bg-bg px-2 py-0.5 text-xs font-semibold"
+                      >
+                        {name}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </li>
             );
           })}
