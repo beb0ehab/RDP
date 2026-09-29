@@ -1,4 +1,10 @@
 {
+  "autopostinsta": {
+    "desktop": "projects/autopostinsta-desktop.webp",
+    "desktopSmall": "projects/autopostinsta-desktop-720.webp",
+    "width": 1440,
+    "height": 900
+  },
   "fbauto": {
     "desktop": "projects/fbauto-desktop.webp",
     "desktopSmall": "projects/fbauto-desktop-720.webp",
@@ -25,10 +31,42 @@
     "mobileWidth": 390,
     "mobileHeight": 844
   },
+  "sco4m": {
+    "desktop": "projects/sco4m-desktop.webp",
+    "desktopSmall": "projects/sco4m-desktop-720.webp",
+    "width": 1440,
+    "height": 900,
+    "mobile": "projects/sco4m-mobile.webp",
+    "mobileSmall": "projects/sco4m-mobile-195.webp",
+    "mobileWidth": 390,
+    "mobileHeight": 844
+  },
+  "telegram-members-manager": {
+    "desktop": "projects/telegram-members-manager-desktop.webp",
+    "desktopSmall": "projects/telegram-members-manager-desktop-720.webp",
+    "width": 1440,
+    "height": 900
+  },
   "volume4t": {
     "desktop": "projects/volume4t-desktop.webp",
     "desktopSmall": "projects/volume4t-desktop-720.webp",
     "width": 1440,
     "height": 900
+  },
+  "wahm": {
+    "desktop": "projects/wahm-desktop.webp",
+    "desktopSmall": "projects/wahm-desktop-720.webp",
+    "width": 1440,
+    "height": 900,
+    "mobile": "projects/wahm-mobile.webp",
+    "mobileSmall": "projects/wahm-mobile-195.webp",
+    "mobileWidth": 390,
+    "mobileHeight": 844
+  },
+  "x-marketing-scraper": {
+    "desktop": "projects/x-marketing-scraper-desktop.webp",
+    "desktopSmall": "projects/x-marketing-scraper-desktop-720.webp",
+    "width": 1112,
+    "height": 695
   }
 }

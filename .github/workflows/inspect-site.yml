@@ -1,0 +1,30 @@
+name: Inspect site
+
+# Opens the URL in .github/inspect-url.txt on GitHub's servers (open internet),
+# saves text + screenshots under .inspect/ and commits them back to the same branch.
+on:
+  push:
+    paths:
+      - .github/inspect-url.txt
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: node scripts/inspect-site.mjs "$(head -n1 .github/inspect-url.txt | tr -d '[:space:]')"
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .inspect
+          git diff --cached --quiet || (git commit -m "Inspect site results" && git push)
