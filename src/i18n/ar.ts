@@ -59,8 +59,6 @@ const ar: Dictionary = {
     details: 'التفاصيل',
     productPage: 'صفحة المنتج',
     viewDetails: 'عرض تفاصيل',
-    moreShow: 'عرض كل المشاريع',
-    moreHide: 'عرض أقل',
     highlights: 'أبرز النقاط',
     techStack: 'التقنيات المستخدمة',
     desktopShot: 'لقطة شاشة على الكمبيوتر',

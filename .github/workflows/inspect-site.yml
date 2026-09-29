@@ -4,6 +4,7 @@ name: Inspect site
 # saves text + screenshots under .inspect/ and commits them back to the same branch.
 on:
   push:
+    branches-ignore: [main]
     paths:
       - .github/inspect-url.txt
 
