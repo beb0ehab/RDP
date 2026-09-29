@@ -4,3 +4,5 @@ dist
 .DS_Store
 *.log
 .lighthouse
+# generated from public/fbauto/fbauto-main-1440x900.png
+public/fbauto/*.webp

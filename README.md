@@ -79,6 +79,22 @@ replace placeholders automatically.
 
 The social preview image and favicons can be regenerated with `npm run og`.
 
+## FBAUTO landing page
+
+A standalone Arabic (RTL) product page at **`/fbauto/`** (e.g. `https://beb0ehab.github.io/RDP/fbauto/`).
+Project card #4 in the portfolio links to it (`landing: 'fbauto/'` in `src/data/projects.ts`).
+
+| What               | Where                                                                                                                                         |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| **WhatsApp link**  | `WHATSAPP_URL` at the top of `fbauto/main.ts` (e.g. `'https://wa.me/201063529309'`)                                                           |
+| **App screenshot** | Replace `public/fbauto/fbauto-main-1440x900.png` (keep the name). WebP copies are generated automatically on `npm run dev` / `npm run build`. |
+| Page text & prices | `fbauto/index.html`                                                                                                                           |
+| Styles             | `fbauto/style.css`                                                                                                                            |
+| Customer reviews   | "آراء العملاء" section in `fbauto/index.html` (placeholder until you have real reviews)                                                       |
+
+Every WhatsApp button sends a ready-made message (set in its `data-wa` attribute), e.g. which
+package the visitor picked. Until `WHATSAPP_URL` is set, the buttons just scroll to the contact section.
+
 ## Deployment
 
 `.github/workflows/deploy.yml` builds and deploys the site on every push to **`main`**.

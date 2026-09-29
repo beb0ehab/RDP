@@ -132,6 +132,7 @@ export const projects: Project[] = [
       'PHP',
     ],
     placeholder: { icon: 'target', from: '#7c3aed', to: '#1e1b4b' },
+    landing: 'fbauto/',
     featured: true,
   },
   {

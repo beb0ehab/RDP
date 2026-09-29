@@ -2,7 +2,7 @@ import { asset } from '../config';
 import { usePreferences } from '../context/Preferences';
 import { getScreenshot } from '../lib/screenshots';
 import type { Project } from '../types';
-import { ExternalIcon } from './Icons';
+import { ArrowIcon, ExternalIcon } from './Icons';
 import { ProjectMedia } from './ProjectMedia';
 
 interface Props {
@@ -11,6 +11,9 @@ interface Props {
   index: number;
   onOpen: (project: Project, trigger: HTMLElement) => void;
 }
+
+const stretched =
+  "after:absolute after:inset-0 after:rounded-md after:content-[''] focus-visible:outline-none focus-visible:after:outline focus-visible:after:outline-2 focus-visible:after:outline-offset-4 focus-visible:after:outline-accent";
 
 export function ProjectCard({ project, index, onOpen }: Props) {
   const { t, lang } = usePreferences();
@@ -59,19 +62,34 @@ export function ProjectCard({ project, index, onOpen }: Props) {
       <div className="mt-4 flex items-start justify-between gap-3">
         <div className="min-w-0">
           <h3 className="font-display text-2xl leading-tight">
-            <button
-              type="button"
-              onClick={(e) => onOpen(project, e.currentTarget)}
-              className="text-start after:absolute after:inset-0 after:rounded-md after:content-[''] focus-visible:outline-none focus-visible:after:outline focus-visible:after:outline-2 focus-visible:after:outline-offset-4 focus-visible:after:outline-accent"
-              aria-haspopup="dialog"
-            >
-              <span className="sr-only">{t.projects.viewDetails} </span>
-              {title}
-            </button>
+            {project.landing ? (
+              <a href={asset(project.landing)} className={stretched}>
+                {title}
+                <span className="sr-only"> — {t.projects.productPage}</span>
+              </a>
+            ) : (
+              <button
+                type="button"
+                onClick={(e) => onOpen(project, e.currentTarget)}
+                className={`text-start ${stretched}`}
+                aria-haspopup="dialog"
+              >
+                <span className="sr-only">{t.projects.viewDetails} </span>
+                {title}
+              </button>
+            )}
           </h3>
           <p className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-accent">
             {project.subtitle[lang]}
           </p>
+          {project.landing && (
+            <p
+              aria-hidden="true"
+              className="mt-2 inline-flex items-center gap-1.5 text-xs font-bold text-ink"
+            >
+              {t.projects.productPage} <ArrowIcon size={14} className="rtl:-scale-x-100" />
+            </p>
+          )}
         </div>
         {project.url && (
           <a
