@@ -67,26 +67,27 @@ const en = {
     eyebrow: 'Services',
     title: 'What I can build for you',
     lead: 'From your first website to the systems that run your business day to day.',
+    examplesLabel: 'From my work',
     items: [
       {
         title: 'Websites & Online Stores',
-        text: 'Fast, mobile-friendly websites and online stores that are easy to use — with booking or ordering straight to WhatsApp when that suits your customers.',
-        example: 'e.g. Kero Tours',
+        text: 'Fast, mobile-friendly websites and online stores that are easy to use — from service platforms and digital stores to booking sites that order straight to WhatsApp.',
+        examples: ['SCO4M', 'Wahm', 'Kero Tours'],
       },
       {
         title: 'CRM & Business Systems',
         text: 'Custom CRMs and internal systems: sales pipelines, lead tracking, attendance, payroll, commission and role-based dashboards.',
-        example: 'e.g. LEADORA, Volume 4T',
+        examples: ['LEADORA', 'Volume 4T'],
       },
       {
         title: 'Bots & Automation',
-        text: 'Telegram bots and workflow automation that take repetitive work off your team — registrations, approvals and content delivery.',
-        example: 'e.g. PilotVBot',
+        text: 'Bots and desktop tools for Telegram, Facebook, X and Instagram that take repetitive work off your team — collecting leads, publishing content and messaging.',
+        examples: ['FBAUTO', 'X Engine', 'AutoPostInsta', 'PilotVBot'],
       },
       {
         title: 'AI Integration',
         text: 'Connect LLMs and AI agents to your website or system — assistants that answer questions about your own data in plain language.',
-        example: 'e.g. Volume 4T CEO assistant',
+        examples: ['Volume 4T', 'X Engine', 'FBAUTO'],
       },
     ],
   },
