@@ -213,6 +213,38 @@ export const projects: Project[] = [
     featured: false,
   },
   {
+    id: 'x-marketing-scraper',
+    title: { en: 'X Marketing & Scraper Pro', ar: 'X Marketing & Scraper Pro' },
+    subtitle: {
+      en: 'Desktop Dashboard for X Outreach & Scraping',
+      ar: 'لوحة تحكم لسطح المكتب للتسويق وجمع البيانات على X',
+    },
+    badge: { en: 'Client project', ar: 'مشروع لعميل' },
+    summary: {
+      en: 'A desktop app for collecting X users and posts, managing outreach and reviewing results, with its dashboard running on a local Flask server.',
+      ar: 'تطبيق سطح مكتب لجمع المستخدمين والمنشورات من X، وإدارة التواصل ومراجعة النتائج، ولوحة التحكم بتاعته شغالة على سيرفر Flask محلي.',
+    },
+    details: {
+      en: [
+        'Scrapes X communities and keyword searches.',
+        'Classifies posts with rules or AI.',
+        'Sends direct messages and schedules posts.',
+        'Exports collected data to Excel.',
+        'Desktop dashboard served by a local Flask server.',
+      ],
+      ar: [
+        'يجمع البيانات من مجتمعات X ومن البحث بالكلمات المفتاحية.',
+        'يصنّف المنشورات بالقواعد أو بالذكاء الاصطناعي.',
+        'يرسل رسائل مباشرة ويجدول المنشورات.',
+        'يصدّر البيانات المجمّعة إلى Excel.',
+        'لوحة تحكم لسطح المكتب تعمل من خلال سيرفر Flask محلي.',
+      ],
+    },
+    tech: ['Python', 'Flask', 'Playwright', 'SQLite', 'pywebview'],
+    placeholder: { icon: 'send', from: '#3f3f46', to: '#09090b' },
+    featured: false,
+  },
+  {
     id: 'github-power-explorer',
     title: { en: 'GitHub Power Explorer', ar: 'GitHub Power Explorer' },
     subtitle: { en: 'LLM-powered GitHub search', ar: 'بحث في GitHub بالذكاء الاصطناعي' },
