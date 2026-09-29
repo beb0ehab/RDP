@@ -21,8 +21,11 @@ export function ProjectCard({ project, index, onOpen }: Props) {
   const shot = getScreenshot(project.id);
 
   return (
-    <article className="reveal group relative flex h-full flex-col">
-      <div className="relative overflow-hidden rounded-md border border-line bg-surface transition duration-300 group-hover:-translate-y-1 group-hover:border-accent/70 group-hover:shadow-[0_18px_40px_-18px_rgb(var(--accent)/0.55)] motion-reduce:group-hover:translate-y-0">
+    <article className="reveal group relative flex h-full flex-col" data-anim="card">
+      <div
+        data-tilt
+        className="relative overflow-hidden rounded-md border border-line bg-surface transition-[border-color,box-shadow] duration-300 group-hover:border-accent/70 group-hover:shadow-[0_18px_40px_-18px_rgb(var(--accent)/0.55)]"
+      >
         <ProjectMedia
           project={project}
           lang={lang}

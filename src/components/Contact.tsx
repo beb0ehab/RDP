@@ -13,6 +13,7 @@ import {
   WhatsAppIcon,
 } from './Icons';
 import { getScreenshot } from '../lib/screenshots';
+import { SplitWords } from './SplitWords';
 
 type CopyState = 'idle' | 'copied' | 'failed';
 
@@ -163,24 +164,29 @@ export function Contact() {
         <div>
           <h2
             id="contact-title"
+            data-split
             className="reveal max-w-md font-display text-5xl leading-[0.95] sm:text-6xl"
           >
-            {t.contact.title}
+            <SplitWords text={t.contact.title} />
           </h2>
-          <p className="reveal mt-4 max-w-md text-pretty text-muted">{t.contact.intro}</p>
+          <p className="reveal mt-4 max-w-md text-pretty text-muted" data-anim="fade">
+            {t.contact.intro}
+          </p>
 
           <a
             href={site.whatsappUrl}
             target="_blank"
             rel="noopener"
-            className="reveal mt-7 inline-flex min-h-[60px] w-full items-center justify-center gap-3 rounded-md bg-[#25D366] px-6 text-lg font-extrabold text-[#052e16] shadow-lift transition hover:-translate-y-0.5 hover:bg-[#2ee173] sm:w-auto"
+            data-anim="fade"
+            data-magnetic
+            className="reveal mt-7 inline-flex min-h-[60px] w-full items-center justify-center gap-3 rounded-md bg-[#25D366] px-6 text-lg font-extrabold text-[#052e16] shadow-lift transition-colors hover:bg-[#2ee173] sm:w-auto"
           >
             <WhatsAppIcon size={24} />
             {t.contact.whatsapp}
             <span className="sr-only">{t.a11y.opensInNewTab}</span>
           </a>
 
-          <div className="reveal mt-8 space-y-2">
+          <div className="reveal mt-8 space-y-2" data-anim="fade">
             <ContactRow
               href={site.whatsappUrl}
               icon={<WhatsAppIcon size={18} />}
@@ -245,7 +251,10 @@ export function Contact() {
             />
           </div>
 
-          <div className="reveal mt-10 flex items-center gap-4 border-t border-line pt-6">
+          <div
+            className="reveal mt-10 flex items-center gap-4 border-t border-line pt-6"
+            data-anim="fade"
+          >
             <span
               aria-hidden="true"
               className="grid h-12 w-12 shrink-0 place-items-center rounded-md bg-accent-strong font-display text-xl text-white"
@@ -257,8 +266,10 @@ export function Contact() {
           </div>
         </div>
 
-        <div className="reveal pb-8">
-          <DeviceMockup />
+        <div className="reveal pb-8" data-parallax="float">
+          <div className="float-y">
+            <DeviceMockup />
+          </div>
         </div>
       </div>
     </section>

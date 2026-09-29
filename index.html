@@ -38,6 +38,15 @@
     <link rel="icon" href="%BASE_URL%favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="%BASE_URL%favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+    <!-- Hero portrait (the largest element above the fold) — fetch it right away. -->
+    <link
+      rel="preload"
+      as="image"
+      href="%BASE_URL%profile-720.webp"
+      imagesrcset="%BASE_URL%profile-560.webp 560w, %BASE_URL%profile-720.webp 720w, %BASE_URL%profile.webp 900w"
+      imagesizes="(min-width: 1024px) 448px, 280px"
+      fetchpriority="high"
+    />
     <!-- Heading font used above the fold — fetch it early. -->
     <link
       rel="preload"

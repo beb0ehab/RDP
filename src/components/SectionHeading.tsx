@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { SplitWords } from './SplitWords';
 
 interface Props {
   id: string;
@@ -23,16 +24,21 @@ export function SectionHeading({ id, title, eyebrow, lead, action, small = false
           )}
           <h2
             id={id}
+            data-split
             className={
               small ? 'mt-1 font-display text-2xl leading-tight sm:text-3xl' : 'section-title'
             }
           >
-            {title}
+            <SplitWords text={title} />
           </h2>
         </div>
         {action}
       </div>
-      {lead && <p className="section-lead">{lead}</p>}
+      {lead && (
+        <p className="section-lead" data-anim="fade">
+          {lead}
+        </p>
+      )}
     </div>
   );
 }

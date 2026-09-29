@@ -23,7 +23,9 @@ export function Services() {
             return (
               <li
                 key={s.title}
-                className="reveal group relative flex flex-col overflow-hidden rounded-md border border-line bg-surface p-6 transition duration-300 hover:-translate-y-1 hover:border-accent/70 hover:shadow-[0_18px_40px_-18px_rgb(var(--accent)/0.55)] motion-reduce:hover:translate-y-0"
+                data-anim="card"
+                data-tilt
+                className="reveal group relative flex flex-col overflow-hidden rounded-md border border-line bg-surface p-6 transition-[border-color,box-shadow] duration-300 hover:border-accent/70 hover:shadow-[0_18px_40px_-18px_rgb(var(--accent)/0.55)]"
               >
                 <div
                   aria-hidden="true"
@@ -36,10 +38,9 @@ export function Services() {
                   <span
                     aria-hidden="true"
                     dir="ltr"
-                    className="font-display text-3xl leading-none text-ink/15 transition-colors group-hover:text-accent/60"
-                  >
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
+                    data-num={String(i + 1).padStart(2, '0')}
+                    className="font-display text-3xl leading-none text-ink/15 transition-colors before:content-[attr(data-num)] group-hover:text-accent/60"
+                  />
                 </div>
 
                 <h3 className="relative mt-5 font-display text-xl leading-snug">{s.title}</h3>
