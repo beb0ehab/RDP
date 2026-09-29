@@ -16,6 +16,7 @@ export const site = {
   // Set photo to '' to show the "AE" monogram instead.
   photo: 'profile.webp' as string,
   photoSmall: 'profile-560.webp',
+  photoMedium: 'profile-720.webp',
 
   // Put your CV at public/Adly_Ehab_CV.pdf — the "Download CV" buttons point to it.
   cvFile: 'Adly_Ehab_CV.pdf',

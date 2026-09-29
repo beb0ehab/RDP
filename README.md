@@ -96,6 +96,17 @@ Project card #4 in the portfolio links to it (`landing: 'fbauto/'` in `src/data/
 Every WhatsApp button sends a ready-made message (set in its `data-wa` attribute), e.g. which
 package the visitor picked. Until `WHATSAPP_URL` is set, the buttons just scroll to the contact section.
 
+## Animations
+
+- **Hero intro** (letters, portrait, text) is pure CSS in `src/index.css` (`.intro*` classes), so it starts with the first paint.
+- **Scroll & hover motion** lives in `src/motion/index.ts` (GSAP + ScrollTrigger, Lenis smooth scroll on desktop).
+  It's loaded lazily (`src/hooks/useMotion.ts`) on the first interaction or shortly after the page loads.
+  Elements opt in with data attributes — `data-split`, `data-anim="card|fade|step|pop"`, `data-parallax`,
+  `data-count`, `data-tilt`, `data-magnetic` (see the comment at the top of the file).
+- The red ribbons under the hero are `src/components/Marquee.tsx`.
+- Everything is disabled for visitors with _reduce motion_ enabled.
+- If you change the hero photo, also update the `<link rel="preload" as="image">` in `index.html`.
+
 ## Deployment
 
 `.github/workflows/deploy.yml` builds and deploys the site on every push to **`main`**.

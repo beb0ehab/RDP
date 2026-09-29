@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import { asset, site } from '../config';
 import { usePreferences } from '../context/Preferences';
 import {
@@ -12,6 +13,26 @@ import {
 
 const factIcons = [RocketIcon, LayersIcon, ClockIcon, GlobeIcon];
 
+/** Inline style that sets the intro delay (CSS variable --d). */
+const d = (ms: number) => ({ '--d': `${ms}ms` }) as CSSProperties;
+
+/** Wraps numbers of 2+ digits so the motion layer can count them up (e.g. "500+"). */
+function Countable({ text }: { text: string }) {
+  return (
+    <>
+      {text.split(/(\d{2,})/).map((part, i) =>
+        /^\d{2,}$/.test(part) ? (
+          <span key={i} data-count={part} className="tabular-nums">
+            {part}
+          </span>
+        ) : (
+          part
+        ),
+      )}
+    </>
+  );
+}
+
 /** Big portrait that fades into the background, or an "AE" monogram until a photo is added. */
 function Portrait() {
   const { t } = usePreferences();
@@ -24,8 +45,8 @@ function Portrait() {
       {site.photo ? (
         <img
           src={asset(site.photo)}
-          srcSet={`${asset(site.photoSmall)} 560w, ${asset(site.photo)} 900w`}
-          sizes="(min-width: 1024px) 448px, 80vw"
+          srcSet={`${asset(site.photoSmall)} 560w, ${asset(site.photoMedium)} 720w, ${asset(site.photo)} 900w`}
+          sizes="(min-width: 1024px) 448px, 280px"
           alt={t.hero.photoAlt}
           width={900}
           height={1125}
@@ -59,38 +80,66 @@ export function Hero() {
       className="relative overflow-hidden border-b border-line bg-[radial-gradient(60%_55%_at_55%_45%,rgb(var(--accent)/0.22),transparent_70%)] pt-20"
     >
       {/* Giant background word, like the cover of a magazine. Decorative only. */}
-      <p
+      <div
         aria-hidden="true"
-        dir="ltr"
-        className="pointer-events-none absolute inset-x-0 top-16 select-none whitespace-nowrap text-center font-display text-[21vw] leading-[0.82] text-accent [mask-image:linear-gradient(to_bottom,#000_30%,transparent_92%)] lg:text-[min(19rem,19.5vw)]"
-        style={{ fontWeight: 400, textTransform: 'uppercase' }}
+        data-parallax="word"
+        className="pointer-events-none absolute inset-x-0 top-16"
       >
-        {t.hero.portfolioWord}
-      </p>
+        <p
+          dir="ltr"
+          className="select-none whitespace-nowrap text-center font-display text-[21vw] leading-[0.82] text-accent [mask-image:linear-gradient(to_bottom,#000_30%,transparent_92%)] lg:text-[min(19rem,19.5vw)]"
+          style={{ fontWeight: 400, textTransform: 'uppercase' }}
+        >
+          {t.hero.portfolioWord.split('').map((ch, i) => (
+            <span
+              key={i}
+              className="intro-letter"
+              style={{ '--d': `${i * 55}ms` } as CSSProperties}
+            >
+              {ch}
+            </span>
+          ))}
+        </p>
+      </div>
 
       <div className="container relative grid gap-8 pt-[12vw] lg:min-h-[44rem] lg:grid-cols-12 lg:items-end lg:gap-6 lg:pt-10">
         {/* Portrait (center on desktop, first on mobile) */}
-        <div className="lg:order-2 lg:col-span-5 lg:self-stretch lg:pt-16">
-          <Portrait />
+        <div data-parallax="portrait" className="lg:order-2 lg:col-span-5 lg:self-stretch lg:pt-16">
+          <div className="intro-portrait h-full">
+            <Portrait />
+          </div>
         </div>
 
         {/* Intro text */}
         <div className="pb-4 lg:order-1 lg:col-span-4 lg:self-center lg:pb-0 lg:pt-44">
           <h1>
-            <span className="block font-script text-4xl text-accent">{t.hero.greeting}</span>
-            <span className="mt-1 block text-balance font-display text-6xl leading-[0.92] sm:text-7xl">
+            <span className="intro block font-script text-4xl text-accent" style={d(250)}>
+              {t.hero.greeting}
+            </span>
+            <span
+              className="intro mt-1 block text-balance font-display text-6xl leading-[0.92] sm:text-7xl"
+              style={d(330)}
+            >
               {t.hero.name}
             </span>
           </h1>
-          <p className="mt-5 text-lg font-extrabold uppercase tracking-wide text-accent">
+          <p
+            className="intro mt-5 text-lg font-extrabold uppercase tracking-wide text-accent"
+            style={d(420)}
+          >
             {t.hero.title}
           </p>
-          <p className="mt-1 text-sm font-bold uppercase tracking-[0.12em]">{t.hero.subtitle}</p>
-          <p className="mt-4 max-w-md text-pretty text-sm leading-relaxed text-muted sm:text-base">
+          <p className="intro mt-1 text-sm font-bold uppercase tracking-[0.12em]" style={d(470)}>
+            {t.hero.subtitle}
+          </p>
+          <p
+            className="intro mt-4 max-w-md text-pretty text-sm leading-relaxed text-muted sm:text-base"
+            style={d(530)}
+          >
             {t.hero.intro}
           </p>
 
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <div className="intro mt-6 flex flex-col gap-3 sm:flex-row" style={d(620)}>
             <a href="#projects" className="btn-primary">
               {t.hero.viewWork}
               <ArrowDownIcon size={18} />
@@ -101,7 +150,10 @@ export function Hero() {
             </a>
           </div>
 
-          <p className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-muted">
+          <p
+            className="intro mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-muted"
+            style={d(700)}
+          >
             <PinIcon size={16} className="text-accent" />
             {t.hero.basedLabel}:<span className="text-ink">{t.hero.basedValue}</span>
           </p>
@@ -112,7 +164,11 @@ export function Hero() {
           {t.hero.facts.map((f, i) => {
             const Icon = factIcons[i];
             return (
-              <li key={f.label} className="flex items-center gap-3 border-b border-line py-4">
+              <li
+                key={f.label}
+                className="intro-side flex items-center gap-3 border-b border-line py-4"
+                style={d(450 + i * 90)}
+              >
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border-2 border-accent text-accent">
                   <Icon size={19} />
                 </span>
@@ -121,7 +177,7 @@ export function Hero() {
                     {f.label}
                   </span>
                   <span className="mt-0.5 block text-sm font-extrabold uppercase leading-snug">
-                    {f.value}
+                    <Countable text={f.value} />
                   </span>
                 </span>
               </li>
