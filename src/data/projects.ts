@@ -214,7 +214,7 @@ export const projects: Project[] = [
   },
   {
     id: 'x-marketing-scraper',
-    title: { en: 'X Marketing & Scraper Pro', ar: 'X Marketing & Scraper Pro' },
+    title: { en: 'X Engine', ar: 'X Engine' },
     subtitle: {
       en: 'Desktop Dashboard for X Outreach & Scraping',
       ar: 'لوحة تحكم لسطح المكتب للتسويق وجمع البيانات على X',
