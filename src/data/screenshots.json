@@ -30,5 +30,11 @@
     "desktopSmall": "projects/volume4t-desktop-720.webp",
     "width": 1440,
     "height": 900
+  },
+  "x-marketing-scraper": {
+    "desktop": "projects/x-marketing-scraper-desktop.webp",
+    "desktopSmall": "projects/x-marketing-scraper-desktop-720.webp",
+    "width": 1112,
+    "height": 695
   }
 }
