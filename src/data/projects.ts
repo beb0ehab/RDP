@@ -277,6 +277,36 @@ export const projects: Project[] = [
     featured: false,
   },
   {
+    id: 'autopostinsta',
+    title: { en: 'AutoPostInsta', ar: 'AutoPostInsta' },
+    subtitle: {
+      en: 'Instagram Reel Publishing Control Panel',
+      ar: 'لوحة تحكم لنشر ريلز إنستجرام',
+    },
+    badge: { en: 'Client project', ar: 'مشروع لعميل' },
+    summary: {
+      en: 'A local web dashboard for managing Instagram accounts and publishing Reels, with direct uploads and an automatic mode that checks configured target accounts.',
+      ar: 'لوحة تحكم ويب محلية لإدارة حسابات إنستجرام ونشر الريلز، مع رفع مباشر ووضع تلقائي يتابع الحسابات المستهدفة.',
+    },
+    details: {
+      en: [
+        'Connect and manage multiple Instagram accounts.',
+        'Queue Reel links with captions, target accounts and delays.',
+        'Automatically check target accounts for new clips.',
+        'Save upload history to avoid reposting tracked clips.',
+      ],
+      ar: [
+        'ربط وإدارة أكثر من حساب إنستجرام.',
+        'جدولة روابط الريلز مع الكابشن والحسابات المستهدفة والفواصل الزمنية.',
+        'متابعة الحسابات المستهدفة تلقائيًا لالتقاط المقاطع الجديدة.',
+        'حفظ سجل الرفع لتجنّب إعادة نشر نفس المقاطع.',
+      ],
+    },
+    tech: ['Python', 'HTML', 'CSS', 'JavaScript', 'instagrapi'],
+    placeholder: { icon: 'send', from: '#e11d48', to: '#18181b' },
+    featured: false,
+  },
+  {
     id: 'github-power-explorer',
     title: { en: 'GitHub Power Explorer', ar: 'GitHub Power Explorer' },
     subtitle: { en: 'LLM-powered GitHub search', ar: 'بحث في GitHub بالذكاء الاصطناعي' },
