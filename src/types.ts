@@ -26,8 +26,6 @@ export interface Project {
   placeholder: { icon: PlaceholderIcon; from: string; to: string };
   /** Optional page inside this site (e.g. 'fbauto/'). Clicking the card opens it instead of the details dialog. */
   landing?: string;
-  /** true = shown in the main grid; false = under "More projects". */
-  featured: boolean;
 }
 
 export interface ScreenshotEntry {

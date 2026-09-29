@@ -57,8 +57,6 @@ const en = {
     details: 'Details',
     productPage: 'Product page',
     viewDetails: 'View details for',
-    moreShow: 'View all projects',
-    moreHide: 'Show fewer',
     highlights: 'Highlights',
     techStack: 'Tech stack',
     desktopShot: 'desktop screenshot',

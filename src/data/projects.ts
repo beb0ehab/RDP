@@ -3,8 +3,6 @@ import type { Project } from '../types';
 /**
  * All portfolio projects. Order = importance (first = most important).
  *
- * - `featured: true`  → main grid
- * - `featured: false` → hidden under the "More projects" toggle
  * - `url`             → shows a "Live site" button (and lets `npm run screenshots` capture it)
  *
  * Screenshots are picked up automatically from src/data/screenshots.json
@@ -37,7 +35,6 @@ export const projects: Project[] = [
     tech: ['React', 'Vite'],
     url: 'https://kerotourshurghada.com',
     placeholder: { icon: 'map', from: '#0ea5b7', to: '#1e3a8a' },
-    featured: true,
   },
   {
     id: 'leadora',
@@ -66,7 +63,6 @@ export const projects: Project[] = [
     tech: ['PHP', 'MySQL', 'JavaScript'],
     url: 'https://leadora-crm.com',
     placeholder: { icon: 'pipeline', from: '#7c3aed', to: '#0f172a' },
-    featured: true,
   },
   {
     id: 'volume4t',
@@ -93,7 +89,6 @@ export const projects: Project[] = [
     tech: ['PHP', 'JavaScript', 'MySQL', 'LLM API'],
     url: 'https://volume4t.com',
     placeholder: { icon: 'building', from: '#f59e0b', to: '#9a3412' },
-    featured: true,
   },
   {
     id: 'fbauto',
@@ -133,84 +128,6 @@ export const projects: Project[] = [
     ],
     placeholder: { icon: 'target', from: '#7c3aed', to: '#1e1b4b' },
     landing: 'fbauto/',
-    featured: true,
-  },
-  {
-    id: 'ai-workspace',
-    title: { en: 'AI Workspace', ar: 'AI Workspace' },
-    subtitle: {
-      en: 'Local-First Knowledge & Agent Desktop App',
-      ar: 'تطبيق سطح مكتب للمعرفة والوكلاء، يعمل محليًا أولًا',
-    },
-    summary: {
-      en: 'Connects notes, files, tasks and sources into one knowledge graph. AI agents enhance it but are never required.',
-      ar: 'يربط الملاحظات والملفات والمهام والمصادر في شبكة معرفة واحدة. وكلاء الذكاء الاصطناعي يضيفون له قيمة، لكنه يعمل بدونهم.',
-    },
-    details: {
-      en: [
-        'Connects notes, files, tasks and sources into one knowledge graph.',
-        'Backlinks and revision history.',
-        'AI agents enhance it but are never required.',
-        'Verified backup/restore and integrity checks.',
-      ],
-      ar: [
-        'يربط الملاحظات والملفات والمهام والمصادر في شبكة معرفة واحدة.',
-        'روابط عكسية (Backlinks) وسجل كامل للتعديلات.',
-        'وكلاء الذكاء الاصطناعي يحسّنون التجربة، لكن التطبيق لا يعتمد عليهم.',
-        'نسخ احتياطي واستعادة مع التحقق منهما، وفحوصات لسلامة البيانات.',
-      ],
-    },
-    tech: ['Electron', 'SQLite', 'LLM'],
-    placeholder: { icon: 'graph', from: '#10b981', to: '#064e3b' },
-    featured: true,
-  },
-  {
-    id: 'arabic-voice',
-    title: { en: 'Arabic Voice Regeneration Tool', ar: 'أداة إعادة توليد الصوت العربي' },
-    subtitle: { en: 'Speech → Text → Neural Voice', ar: 'من الكلام إلى النص إلى صوت طبيعي' },
-    summary: {
-      en: 'Records Arabic speech, transcribes it and regenerates it in a natural neural voice.',
-      ar: 'تسجّل الكلام العربي، وتحوّله إلى نص، ثم تعيد توليده بصوت طبيعي باستخدام الشبكات العصبية.',
-    },
-    details: {
-      en: [
-        'Records Arabic speech, transcribes it and regenerates it in a natural neural voice.',
-        'Audio cleanup.',
-        'Automatic fallback to a secondary engine.',
-      ],
-      ar: [
-        'تسجّل الكلام العربي، وتحوّله إلى نص، ثم تعيد توليده بصوت طبيعي.',
-        'تنقية الصوت وتحسينه.',
-        'تحويل تلقائي إلى محرّك احتياطي عند الحاجة.',
-      ],
-    },
-    tech: ['Python', 'Speech recognition', 'Neural TTS'],
-    placeholder: { icon: 'mic', from: '#ec4899', to: '#581c87' },
-    featured: true,
-  },
-  {
-    id: 'pilotvbot',
-    title: { en: 'PilotVBot', ar: 'PilotVBot' },
-    subtitle: { en: 'Telegram Bot', ar: 'بوت تيليجرام' },
-    summary: {
-      en: 'Arabic Telegram bot with referral registration, admin approval and automatic content delivery.',
-      ar: 'بوت تيليجرام عربي بتسجيل عن طريق الإحالة، وموافقة من الإدارة، وتوصيل تلقائي للمحتوى.',
-    },
-    details: {
-      en: [
-        'Arabic Telegram bot with referral registration.',
-        'Admin approval and automatic content delivery.',
-        'Runs on cheap shared hosting.',
-      ],
-      ar: [
-        'بوت تيليجرام عربي بنظام تسجيل عن طريق الإحالة.',
-        'موافقة من الإدارة، وتوصيل تلقائي للمحتوى.',
-        'يعمل على استضافة مشتركة منخفضة التكلفة.',
-      ],
-    },
-    tech: ['Python', 'aiogram 3', 'async SQLAlchemy'],
-    placeholder: { icon: 'send', from: '#38bdf8', to: '#1e40af' },
-    featured: false,
   },
   {
     id: 'sco4m',
@@ -244,7 +161,6 @@ export const projects: Project[] = [
     tech: ['Web platform', 'SMM API v2', 'Arabic / English'],
     url: 'https://sco4m.com',
     placeholder: { icon: 'target', from: '#e11d48', to: '#18181b' },
-    featured: false,
   },
   {
     id: 'wahm',
@@ -274,7 +190,6 @@ export const projects: Project[] = [
     tech: ['PHP', 'JavaScript', 'HTML', 'CSS'],
     url: 'https://wahm.space',
     placeholder: { icon: 'target', from: '#b8862e', to: '#18181b' },
-    featured: false,
   },
   {
     id: 'x-marketing-scraper',
@@ -306,7 +221,6 @@ export const projects: Project[] = [
     },
     tech: ['Python', 'Flask', 'Playwright', 'SQLite', 'pywebview'],
     placeholder: { icon: 'send', from: '#3f3f46', to: '#09090b' },
-    featured: false,
   },
   {
     id: 'telegram-members-manager',
@@ -338,7 +252,6 @@ export const projects: Project[] = [
     },
     tech: ['Python', 'CustomTkinter', 'Pyrogram', 'Telethon', 'SQLite'],
     placeholder: { icon: 'send', from: '#229ed9', to: '#0b3a57' },
-    featured: false,
   },
   {
     id: 'autopostinsta',
@@ -368,7 +281,80 @@ export const projects: Project[] = [
     },
     tech: ['Python', 'HTML', 'CSS', 'JavaScript', 'instagrapi'],
     placeholder: { icon: 'send', from: '#e11d48', to: '#18181b' },
-    featured: false,
+  },
+  {
+    id: 'ai-workspace',
+    title: { en: 'AI Workspace', ar: 'AI Workspace' },
+    subtitle: {
+      en: 'Local-First Knowledge & Agent Desktop App',
+      ar: 'تطبيق سطح مكتب للمعرفة والوكلاء، يعمل محليًا أولًا',
+    },
+    summary: {
+      en: 'Connects notes, files, tasks and sources into one knowledge graph. AI agents enhance it but are never required.',
+      ar: 'يربط الملاحظات والملفات والمهام والمصادر في شبكة معرفة واحدة. وكلاء الذكاء الاصطناعي يضيفون له قيمة، لكنه يعمل بدونهم.',
+    },
+    details: {
+      en: [
+        'Connects notes, files, tasks and sources into one knowledge graph.',
+        'Backlinks and revision history.',
+        'AI agents enhance it but are never required.',
+        'Verified backup/restore and integrity checks.',
+      ],
+      ar: [
+        'يربط الملاحظات والملفات والمهام والمصادر في شبكة معرفة واحدة.',
+        'روابط عكسية (Backlinks) وسجل كامل للتعديلات.',
+        'وكلاء الذكاء الاصطناعي يحسّنون التجربة، لكن التطبيق لا يعتمد عليهم.',
+        'نسخ احتياطي واستعادة مع التحقق منهما، وفحوصات لسلامة البيانات.',
+      ],
+    },
+    tech: ['Electron', 'SQLite', 'LLM'],
+    placeholder: { icon: 'graph', from: '#10b981', to: '#064e3b' },
+  },
+  {
+    id: 'arabic-voice',
+    title: { en: 'Arabic Voice Regeneration Tool', ar: 'أداة إعادة توليد الصوت العربي' },
+    subtitle: { en: 'Speech → Text → Neural Voice', ar: 'من الكلام إلى النص إلى صوت طبيعي' },
+    summary: {
+      en: 'Records Arabic speech, transcribes it and regenerates it in a natural neural voice.',
+      ar: 'تسجّل الكلام العربي، وتحوّله إلى نص، ثم تعيد توليده بصوت طبيعي باستخدام الشبكات العصبية.',
+    },
+    details: {
+      en: [
+        'Records Arabic speech, transcribes it and regenerates it in a natural neural voice.',
+        'Audio cleanup.',
+        'Automatic fallback to a secondary engine.',
+      ],
+      ar: [
+        'تسجّل الكلام العربي، وتحوّله إلى نص، ثم تعيد توليده بصوت طبيعي.',
+        'تنقية الصوت وتحسينه.',
+        'تحويل تلقائي إلى محرّك احتياطي عند الحاجة.',
+      ],
+    },
+    tech: ['Python', 'Speech recognition', 'Neural TTS'],
+    placeholder: { icon: 'mic', from: '#ec4899', to: '#581c87' },
+  },
+  {
+    id: 'pilotvbot',
+    title: { en: 'PilotVBot', ar: 'PilotVBot' },
+    subtitle: { en: 'Telegram Bot', ar: 'بوت تيليجرام' },
+    summary: {
+      en: 'Arabic Telegram bot with referral registration, admin approval and automatic content delivery.',
+      ar: 'بوت تيليجرام عربي بتسجيل عن طريق الإحالة، وموافقة من الإدارة، وتوصيل تلقائي للمحتوى.',
+    },
+    details: {
+      en: [
+        'Arabic Telegram bot with referral registration.',
+        'Admin approval and automatic content delivery.',
+        'Runs on cheap shared hosting.',
+      ],
+      ar: [
+        'بوت تيليجرام عربي بنظام تسجيل عن طريق الإحالة.',
+        'موافقة من الإدارة، وتوصيل تلقائي للمحتوى.',
+        'يعمل على استضافة مشتركة منخفضة التكلفة.',
+      ],
+    },
+    tech: ['Python', 'aiogram 3', 'async SQLAlchemy'],
+    placeholder: { icon: 'send', from: '#38bdf8', to: '#1e40af' },
   },
   {
     id: 'github-power-explorer',
@@ -392,7 +378,6 @@ export const projects: Project[] = [
     },
     tech: ['Flask', 'GitHub API', 'Llama 3.3'],
     placeholder: { icon: 'search', from: '#64748b', to: '#0f172a' },
-    featured: false,
   },
   {
     id: 'buying-intent',
@@ -416,6 +401,5 @@ export const projects: Project[] = [
     },
     tech: ['Python', 'NLP'],
     placeholder: { icon: 'target', from: '#ef4444', to: '#7c2d12' },
-    featured: false,
   },
 ];

@@ -34,7 +34,8 @@ npm run format     # Prettier
 Each project in `src/data/projects.ts` has an English and Arabic version of every text.
 The array order is the display order.
 
-- `featured: true` → main grid; `featured: false` → under the **More projects** toggle.
+- All projects are always shown, in array order.
+- `landing` → the card opens a page inside this site (e.g. `fbauto/`) instead of the details dialog.
 - `url` → shows the **Live site** button. Remove it to hide the button.
 - `badge` → optional small label (e.g. "Client project").
 - `placeholder` → icon + gradient used until the project has a screenshot.
