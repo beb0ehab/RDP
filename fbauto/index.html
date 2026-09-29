@@ -271,13 +271,19 @@
         <div class="wrap">
           <p class="kicker px" dir="ltr">// PRICING</p>
           <h2 id="pricing-title" class="h2">اختار الباقة اللي تناسبك</h2>
+          <p class="pricing__lead">
+            كل الباقات فيها البرنامج كامل بكل مميزاته — الفرق في المدة والمساعدة.
+          </p>
           <ul class="plans">
             <li class="plan">
               <h3 class="plan__name">الأداة بس</h3>
               <p class="plan__price"><b class="px">300</b> جنيه <span>/ شهر</span></p>
+              <p class="plan__note">للتجربة على مدى شهر</p>
               <ul class="plan__list">
                 <li>البرنامج بكل مميزاته</li>
                 <li>مدة الاشتراك: شهر</li>
+                <li class="plan__perk">+3 أيام زيادة للتجربة</li>
+                <li class="plan__perk">أيام أي مشكلة ما بتتحسبش من اشتراكك</li>
               </ul>
               <a
                 class="btn btn--ghost btn--block"
@@ -288,32 +294,21 @@
               </a>
             </li>
 
-            <li class="plan">
-              <h3 class="plan__name">الأداة + فيديو شرح</h3>
-              <p class="plan__price"><b class="px">900</b> جنيه <span>/ 3 شهور</span></p>
-              <ul class="plan__list">
-                <li>البرنامج بكل مميزاته</li>
-                <li>فيديو شرح</li>
-                <li>مدة الاشتراك: 3 شهور</li>
-              </ul>
-              <a
-                class="btn btn--ghost btn--block"
-                data-wa="عايز باقة: الأداة + فيديو شرح (3 شهور بـ 900 جنيه)"
-                href="#contact"
-              >
-                اطلب الباقة
-              </a>
-            </li>
-
             <li class="plan plan--featured">
               <p class="plan__badge">محدود لأول 15 عميل بس</p>
               <h3 class="plan__name">الباقة المميزة</h3>
               <p class="plan__price"><b class="px">600</b> جنيه <span>/ 3 شهور</span></p>
+              <p class="plan__note">
+                يعني <b class="px">200</b> جنيه في الشهر · <span class="save">وفّر 300 جنيه</span>
+              </p>
               <ul class="plan__list">
+                <li>البرنامج بكل مميزاته</li>
                 <li>مدة الاشتراك: 3 شهور</li>
                 <li>أنا اللي أسطّب البرنامج على جهازك</li>
                 <li>أظبطهولك على مجالك</li>
                 <li>أي مشكلة تظهر، أصلحها في نفس اليوم</li>
+                <li class="plan__perk">+3 أيام زيادة للتجربة</li>
+                <li class="plan__perk">أيام أي مشكلة ما بتتحسبش من اشتراكك</li>
               </ul>
               <a
                 class="btn btn--block"
@@ -322,6 +317,47 @@
               >
                 احجز مكانك
               </a>
+            </li>
+
+            <li class="plan">
+              <p class="plan__badge plan__badge--ghost">الأوفر من الشهري</p>
+              <h3 class="plan__name">الأداة + فيديو شرح</h3>
+              <p class="plan__price"><b class="px">750</b> جنيه <span>/ 3 شهور</span></p>
+              <p class="plan__note">
+                يعني <b class="px">250</b> جنيه في الشهر · <span class="save">وفّر 150 جنيه</span>
+              </p>
+              <ul class="plan__list">
+                <li>البرنامج بكل مميزاته</li>
+                <li>مدة الاشتراك: 3 شهور</li>
+                <li>فيديو شرح خطوة بخطوة للبرنامج</li>
+                <li class="plan__perk">+3 أيام زيادة للتجربة</li>
+                <li class="plan__perk">أيام أي مشكلة ما بتتحسبش من اشتراكك</li>
+              </ul>
+              <a
+                class="btn btn--ghost btn--block"
+                data-wa="عايز باقة: الأداة + فيديو شرح (3 شهور بـ 750 جنيه)"
+                href="#contact"
+              >
+                اطلب الباقة
+              </a>
+            </li>
+          </ul>
+
+          <ul class="perks" aria-label="مع كل باقة">
+            <li>
+              <svg class="perks__ico" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="#i-gift" />
+              </svg>
+              <span><b>3 أيام زيادة للتجربة</b> فوق مدة أي باقة، مجانًا.</span>
+            </li>
+            <li>
+              <svg class="perks__ico" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="#i-clock" />
+              </svg>
+              <span
+                ><b>أي مشكلة تواجهك مش بتتحسب عليك</b> — الأيام اللي البرنامج يقف فيها بسببها بتتضاف
+                لاشتراكك.</span
+              >
             </li>
           </ul>
           <p class="pay"><b>الدفع:</b> إنستاباي أو فودافون كاش — والتفاصيل بتتبعتلك بعد التواصل.</p>
@@ -456,6 +492,20 @@
       </symbol>
       <symbol id="i-win" viewBox="0 0 24 24" shape-rendering="crispEdges">
         <path fill="currentColor" d="M3 4h8v7H3zM13 3h8v8h-8zM3 13h8v7H3zM13 13h8v8h-8z" />
+      </symbol>
+      <symbol id="i-gift" viewBox="0 0 24 24" shape-rendering="crispEdges">
+        <path
+          fill="currentColor"
+          d="M3 8h18v4H3zM4 12h7v9H4zM13 12h7v9h-7zM7 4h2v2h2v2H7zM15 4h2v4h-4V6h2z"
+        />
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" shape-rendering="crispEdges">
+        <path
+          fill="currentColor"
+          d="M8 2h8v2h2v2h2v2h2v8h-2v2h-2v2h-2v2H8v-2H6v-2H4v-2H2V8h2V6h2V4h2zm0 4v2H6v8h2v2h8v-2h2V8h-2V6z"
+          fill-rule="evenodd"
+        />
+        <path fill="currentColor" d="M11 8h2v4h3v2h-5z" />
       </symbol>
       <symbol id="i-shield" viewBox="0 0 24 24" shape-rendering="crispEdges">
         <path

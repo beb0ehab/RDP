@@ -7,6 +7,8 @@ import '@fontsource/ibm-plex-sans-arabic/latin-700.css';
 import '@fontsource/lalezar/arabic-400.css';
 import '@fontsource/pixelify-sans/latin-400.css';
 import '@fontsource/pixelify-sans/latin-700.css';
+// VT323: clearer pixel digits for prices.
+import '@fontsource/vt323/latin-400.css';
 import './style.css';
 
 /* ==================================================================
