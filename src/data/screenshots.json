@@ -53,6 +53,16 @@
     "width": 1440,
     "height": 900
   },
+  "wahm": {
+    "desktop": "projects/wahm-desktop.webp",
+    "desktopSmall": "projects/wahm-desktop-720.webp",
+    "width": 1440,
+    "height": 900,
+    "mobile": "projects/wahm-mobile.webp",
+    "mobileSmall": "projects/wahm-mobile-195.webp",
+    "mobileWidth": 390,
+    "mobileHeight": 844
+  },
   "x-marketing-scraper": {
     "desktop": "projects/x-marketing-scraper-desktop.webp",
     "desktopSmall": "projects/x-marketing-scraper-desktop-720.webp",

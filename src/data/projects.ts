@@ -247,6 +247,36 @@ export const projects: Project[] = [
     featured: false,
   },
   {
+    id: 'wahm',
+    title: { en: 'Wahm', ar: 'Wahm' },
+    subtitle: {
+      en: 'Digital Subscriptions & Services Store',
+      ar: 'متجر اشتراكات وخدمات رقمية',
+    },
+    summary: {
+      en: 'An Arabic online store for digital subscriptions (Spotify, Netflix, Shahid, ChatGPT, Canva), social media services and game top-ups, with a simple order flow finished on WhatsApp.',
+      ar: 'متجر عربي أونلاين للاشتراكات الرقمية (Spotify وNetflix وShahid وChatGPT وCanva)، وخدمات السوشيال ميديا، وشحن الألعاب، مع خطوات طلب بسيطة تكتمل على واتساب.',
+    },
+    details: {
+      en: [
+        'Catalogue of digital subscriptions, social media services and game top-ups (PUBG UC, Free Fire gems).',
+        'A dedicated page per service, with prices, discounts and badges (trending, best seller, new).',
+        'Order flow: choose a service, enter details, upload payment proof, then send the order via WhatsApp.',
+        'Arabic RTL interface with a premium gold-on-black design, responsive on mobile.',
+      ],
+      ar: [
+        'كتالوج اشتراكات رقمية وخدمات سوشيال ميديا وشحن ألعاب (PUBG UC وجواهر Free Fire).',
+        'صفحة خاصة لكل خدمة بالسعر والخصم وشارات (رائج، الأكثر مبيعًا، جديد).',
+        'خطوات الطلب: اختيار الخدمة، إدخال البيانات، رفع إثبات الدفع، ثم إرسال الطلب على واتساب.',
+        'واجهة عربية (RTL) بتصميم ذهبي على أسود، ومتجاوبة مع الموبايل.',
+      ],
+    },
+    tech: ['PHP', 'JavaScript', 'HTML', 'CSS'],
+    url: 'https://wahm.space',
+    placeholder: { icon: 'target', from: '#b8862e', to: '#18181b' },
+    featured: false,
+  },
+  {
     id: 'x-marketing-scraper',
     title: { en: 'X Engine', ar: 'X Engine' },
     subtitle: {
