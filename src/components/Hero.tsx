@@ -24,11 +24,13 @@ function Portrait() {
       {site.photo ? (
         <img
           src={asset(site.photo)}
+          srcSet={`${asset(site.photoSmall)} 560w, ${asset(site.photo)} 900w`}
+          sizes="(min-width: 1024px) 448px, 80vw"
           alt={t.hero.photoAlt}
-          width={800}
-          height={1000}
+          width={900}
+          height={1125}
           fetchPriority="high"
-          className="relative mx-auto block h-full max-h-[40rem] w-auto object-contain object-bottom [mask-image:linear-gradient(to_bottom,#000_75%,transparent)]"
+          className="relative mx-auto block h-auto w-full max-w-[22rem] object-contain object-bottom [mask-image:linear-gradient(to_bottom,#000_78%,transparent)] lg:max-w-none"
         />
       ) : (
         <div
