@@ -245,6 +245,38 @@ export const projects: Project[] = [
     featured: false,
   },
   {
+    id: 'telegram-members-manager',
+    title: { en: 'Telegram Members Manager', ar: 'Telegram Members Manager' },
+    subtitle: {
+      en: 'Desktop Tool for Managing Telegram Groups',
+      ar: 'أداة سطح مكتب لإدارة جروبات تيليجرام',
+    },
+    badge: { en: 'Client project', ar: 'مشروع لعميل' },
+    summary: {
+      en: 'A Python desktop app for managing Telegram sessions, collecting group members and adding them to groups, with messaging and a local inbox.',
+      ar: 'تطبيق سطح مكتب بلغة Python لإدارة جلسات تيليجرام، وجمع أعضاء الجروبات وإضافتهم إلى جروبات أخرى، مع إرسال الرسائل وصندوق وارد محلي.',
+    },
+    details: {
+      en: [
+        'Creates and manages Telegram sessions.',
+        'Searches groups and collects member data.',
+        'Adds members from groups, Excel or a local database.',
+        'Sends messages to recipients from Excel.',
+        'Stores conversations in a local inbox.',
+      ],
+      ar: [
+        'إنشاء جلسات تيليجرام وإدارتها.',
+        'البحث عن الجروبات وجمع بيانات أعضائها.',
+        'إضافة الأعضاء من جروبات أو من ملف Excel أو من قاعدة بيانات محلية.',
+        'إرسال رسائل لقائمة مستلمين من ملف Excel.',
+        'حفظ المحادثات في صندوق وارد محلي.',
+      ],
+    },
+    tech: ['Python', 'CustomTkinter', 'Pyrogram', 'Telethon', 'SQLite'],
+    placeholder: { icon: 'send', from: '#229ed9', to: '#0b3a57' },
+    featured: false,
+  },
+  {
     id: 'github-power-explorer',
     title: { en: 'GitHub Power Explorer', ar: 'GitHub Power Explorer' },
     subtitle: { en: 'LLM-powered GitHub search', ar: 'بحث في GitHub بالذكاء الاصطناعي' },
