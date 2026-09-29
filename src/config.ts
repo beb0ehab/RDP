@@ -12,9 +12,10 @@ export const site = {
   // While this is empty, GitHub links are hidden automatically.
   githubUrl: '' as string,
 
-  // TODO(Adly): add a portrait photo at public/profile.webp (about 800×1000, WebP) and set this to
-  // 'profile.webp'. While it's empty, the hero shows an "AE" monogram instead of a photo.
-  photo: '' as string,
+  // Hero portrait: a transparent-background WebP (900×1125) + a 560px copy for phones.
+  // Set photo to '' to show the "AE" monogram instead.
+  photo: 'profile.webp' as string,
+  photoSmall: 'profile-560.webp',
 
   // Put your CV at public/Adly_Ehab_CV.pdf — the "Download CV" buttons point to it.
   cvFile: 'Adly_Ehab_CV.pdf',
