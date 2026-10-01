@@ -193,6 +193,7 @@ export const projects: Project[] = [
   },
   {
     id: 'x-marketing-scraper',
+    landing: 'xengine/',
     title: { en: 'X Engine', ar: 'X Engine' },
     subtitle: {
       en: 'Desktop Dashboard for X Outreach & Scraping',
@@ -224,6 +225,7 @@ export const projects: Project[] = [
   },
   {
     id: 'telegram-members-manager',
+    landing: 'telegram/',
     title: { en: 'Telegram Members Manager', ar: 'Telegram Members Manager' },
     subtitle: {
       en: 'Desktop Tool for Managing Telegram Groups',

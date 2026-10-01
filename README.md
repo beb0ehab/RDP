@@ -96,6 +96,18 @@ Project card #4 in the portfolio links to it (`landing: 'fbauto/'` in `src/data/
 Every WhatsApp button sends a ready-made message (set in its `data-wa` attribute), e.g. which
 package the visitor picked. Until `WHATSAPP_URL` is set, the buttons just scroll to the contact section.
 
+## X Engine & Telegram Members Manager landing pages
+
+Two more Arabic product pages built from the FBAUTO template, opened by project cards #7 and #8:
+
+| Page                     | URL          | Text & prices         | Styles                                   |
+| ------------------------ | ------------ | --------------------- | ---------------------------------------- |
+| X Engine                 | `/xengine/`  | `xengine/index.html`  | `xengine/style.css` (teal, like the app) |
+| Telegram Members Manager | `/telegram/` | `telegram/index.html` | `telegram/style.css` (Telegram blue)     |
+
+The WhatsApp link is `WHATSAPP_URL` in each page's `main.ts`. The hero images are the project
+screenshots in `public/projects/`.
+
 ## Animations
 
 - **Hero intro** (letters, portrait, text) is pure CSS in `src/index.css` (`.intro*` classes), so it starts with the first paint.

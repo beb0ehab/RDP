@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Telegram Members Manager — كبّر جروباتك على تيليجرام</title>
+    <meta
+      name="description"
+      content="Telegram Members Manager تطبيق ديسكتوب بيدير حسابات تيليجرام، ويدوّر على الجروبات ويجمع أعضاءها، ويضيفهم لجروبك، ويبعت رسايل لقائمة من Excel، مع صندوق وارد على جهازك."
+    />
+    <meta name="theme-color" content="#04070f" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="%VITE_SITE_URL%telegram/" />
+    <meta property="og:type" content="product" />
+    <meta property="og:title" content="Telegram Members Manager — كبّر جروباتك على تيليجرام" />
+    <meta
+      property="og:description"
+      content="إدارة حسابات تيليجرام، جمع أعضاء الجروبات، إضافة أعضاء من جروبات أو Excel، رسايل جماعية، وصندوق وارد."
+    />
+    <meta property="og:url" content="%VITE_SITE_URL%telegram/" />
+    <meta
+      property="og:image"
+      content="%VITE_SITE_URL%projects/telegram-members-manager-desktop.webp"
+    />
+    <meta property="og:locale" content="ar_EG" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="%BASE_URL%favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+    <!-- Fonts used above the fold: fetch early to avoid layout shift. -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+      href="/node_modules/@fontsource/lalezar/files/lalezar-arabic-400-normal.woff2"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+      href="/node_modules/@fontsource/pixelify-sans/files/pixelify-sans-latin-700-normal.woff2"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+      href="/node_modules/@fontsource/ibm-plex-sans-arabic/files/ibm-plex-sans-arabic-arabic-400-normal.woff2"
+    />
+  </head>
+  <body>
+    <a class="skip" href="#main">انتقل إلى المحتوى</a>
+
+    <!-- ============ Header ============ -->
+    <header class="topbar">
+      <div class="wrap topbar__in">
+        <a class="brand" href="#top" aria-label="Telegram Members Manager — أول الصفحة">
+          <svg class="logo logo--sm" viewBox="0 0 12 12" aria-hidden="true">
+            <use href="#logo" />
+          </svg>
+          <span class="px" dir="ltr">TG MEMBERS</span>
+        </a>
+        <nav class="topbar__nav" aria-label="روابط الصفحة">
+          <a href="#features">المميزات</a>
+          <a href="#how">إزاي بتشتغل</a>
+          <a href="#pricing">الباقات</a>
+        </nav>
+        <a
+          class="btn btn--sm"
+          data-wa="أهلًا، عايز أعرف أكتر عن Telegram Members Manager"
+          href="#contact"
+        >
+          اطلب النسخة
+        </a>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ============ 1. Hero ============ -->
+      <section id="top" class="hero">
+        <div class="wrap hero__grid">
+          <div class="hero__text">
+            <p class="tag">
+              <span class="dot" aria-hidden="true"></span>
+              تطبيق ديسكتوب لإدارة جروبات تيليجرام
+            </p>
+            <h1 class="hero__title">
+              <span class="px hero__logo" dir="ltr"
+                >TG MEMBERS<span class="cursor" aria-hidden="true">_</span></span
+              >
+              <span class="hero__slogan">كبّر جروبك على تيليجرام، ووصل لجمهورك أسرع</span>
+            </h1>
+            <p class="hero__sub">
+              دوّر على الجروبات اللي في مجالك واجمع أعضاءها، وضيفهم لجروبك من جروبات تانية أو من ملف
+              Excel، وابعت رسايل لقائمتك — وكل ده من أكتر من حساب، من برنامج واحد على جهازك.
+            </p>
+            <div class="hero__cta">
+              <a
+                class="btn btn--lg"
+                data-wa="أهلًا، عايز أطلب نسخة من Telegram Members Manager"
+                href="#contact"
+              >
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
+                اطلب النسخة على واتساب
+              </a>
+              <a class="btn btn--ghost btn--lg" href="#pricing">شوف الباقات</a>
+            </div>
+            <ul class="hero__meta">
+              <li>تطبيق ديسكتوب</li>
+              <li>أكتر من حساب</li>
+              <li>استيراد من Excel</li>
+            </ul>
+          </div>
+
+          <figure class="hero__shot hero__shot--bare">
+            <picture>
+              <source
+                type="image/webp"
+                srcset="
+                  /projects/telegram-members-manager-desktop-720.webp  720w,
+                  /projects/telegram-members-manager-desktop.webp     1440w
+                "
+                sizes="(min-width: 1024px) 640px, 100vw"
+              />
+              <img
+                src="/projects/telegram-members-manager-desktop.webp"
+                width="1440"
+                height="900"
+                alt="شاشة إضافة الأعضاء في Telegram Members Manager: الجروب المصدر والجروب الهدف وعدد الأعضاء والحد اليومي لكل حساب"
+                fetchpriority="high"
+              />
+            </picture>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============ 2. Problem / Solution ============ -->
+      <section class="section" aria-labelledby="ps-title">
+        <div class="wrap">
+          <h2 id="ps-title" class="h2">بدل ما تضيف الأعضاء واحد واحد</h2>
+          <ol class="ps">
+            <li class="ps__item ps__item--bad">
+              <span class="ps__mark px" aria-hidden="true">✕</span>
+              تكبير جروب تيليجرام بالإيد — تدوير على جروبات، ونسخ أعضاء، وإضافة ورسايل — بياكل يومك
+              كله.
+            </li>
+            <li class="ps__item">
+              <span class="ps__mark px" aria-hidden="true">›</span>
+              البرنامج بيدوّر على الجروبات ويجمع بيانات أعضائها، ويضيفهم لجروبك من جروبات أو من
+              Excel أو من قاعدة البيانات.
+            </li>
+            <li class="ps__item">
+              <span class="ps__mark px" aria-hidden="true">›</span>
+              وتقدر تبعت رسايل لقائمة من Excel، وتتابع الردود في صندوق وارد جوه البرنامج.
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ 3. Features ============ -->
+      <section id="features" class="section" aria-labelledby="features-title">
+        <div class="wrap">
+          <p class="kicker px" dir="ltr">// FEATURES</p>
+          <h2 id="features-title" class="h2">كل اللي محتاجه عشان تكبّر جروبك</h2>
+          <ul class="grid">
+            <li class="card">
+              <svg class="card__ico" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="#i-key" />
+              </svg>
+              <h3>إدارة الحسابات</h3>
+              <p>اعمل جلسات (Sessions) لحسابات تيليجرام وأدِرها كلها من مكان واحد.</p>
+            </li>
+            <li class="card">
+              <svg class="card__ico" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="#i-search" />
+              </svg>
+              <h3>البحث عن الجروبات</h3>
+              <p>دوّر على الجروبات اللي في مجالك من جوه البرنامج.</p>
+            </li>
+            <li class="card">
+              <svg class="card__ico" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="#i-users" />
+              </svg>
+              <h3>جمع بيانات الأعضاء</h3>
+              <p>اجمع أعضاء أي جروب واحفظهم في قاعدة بيانات على جهازك.</p>
+            </li>
+            <li class="card">
+              <svg class="card__ico" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="#i-add" />
+              </svg>
+              <h3>إضافة الأعضاء لجروبك</h3>
+              <p>من جروب تاني، أو من ملف Excel، أو من قاعدة البيانات اللي جمعتها.</p>
+            </li>
+            <li class="card">
+              <svg class="card__ico" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="#i-msg" />
+              </svg>
+              <h3>رسايل لقائمة من Excel</h3>
+              <p>ارفع ملف Excel بالمستلمين، والبرنامج يبعتلهم رسالتك.</p>
+            </li>
+            <li class="card">
+              <svg class="card__ico" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="#i-inbox" />
+              </svg>
+              <h3>صندوق وارد</h3>
+              <p>المحادثات بتتحفظ جوه البرنامج، فتتابع الردود من غير ما تتوه.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ 4. How it works ============ -->
+      <section id="how" class="section" aria-labelledby="how-title">
+        <div class="wrap">
+          <p class="kicker px" dir="ltr">// HOW IT WORKS</p>
+          <h2 id="how-title" class="h2">إزاي بتشتغل؟ 4 خطوات</h2>
+          <ol class="steps">
+            <li class="step">
+              <span class="step__n px">01</span>
+              <h3>ضيف حساباتك</h3>
+              <p>سجّل حسابات تيليجرام اللي هتشتغل بيها.</p>
+            </li>
+            <li class="step">
+              <span class="step__n px">02</span>
+              <h3>دوّر واجمع</h3>
+              <p>لاقي الجروبات اللي في مجالك واجمع أعضاءها.</p>
+            </li>
+            <li class="step">
+              <span class="step__n px">03</span>
+              <h3>ضيف لجروبك</h3>
+              <p>اختار الجروب الهدف وعدد الأعضاء، ودوس ابدأ.</p>
+            </li>
+            <li class="step">
+              <span class="step__n px">04</span>
+              <h3>راسل وتابع</h3>
+              <p>ابعت رسايل لقائمتك وتابع الردود في صندوق الوارد.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ 5. Pricing ============ -->
+      <section id="pricing" class="section" aria-labelledby="pricing-title">
+        <div class="wrap">
+          <p class="kicker px" dir="ltr">// PRICING</p>
+          <h2 id="pricing-title" class="h2">اختار الباقة اللي تناسبك</h2>
+          <p class="pricing__lead">
+            كل الباقات فيها البرنامج كامل بكل مميزاته — الفرق في المدة والمساعدة. وأسعارنا أقل من
+            أدوات تيليجرام المشابهة اللي بتتباع بالدولار.
+          </p>
+          <ul class="plans">
+            <li class="plan">
+              <h3 class="plan__name">الأداة بس</h3>
+              <p class="plan__price"><b class="px">700</b> جنيه <span>/ شهر</span></p>
+              <p class="plan__note">للتجربة على مدى شهر</p>
+              <ul class="plan__list">
+                <li>البرنامج بكل مميزاته</li>
+                <li>مدة الاشتراك: شهر</li>
+                <li class="plan__perk">+3 أيام زيادة للتجربة</li>
+                <li class="plan__perk">أيام أي مشكلة ما بتتحسبش من اشتراكك</li>
+              </ul>
+              <a
+                class="btn btn--ghost btn--block"
+                data-wa="عايز باقة Telegram Members Manager: الأداة بس (شهر بـ 700 جنيه)"
+                href="#contact"
+              >
+                اطلب الباقة
+              </a>
+            </li>
+
+            <li class="plan plan--featured">
+              <p class="plan__badge">محدود لأول 15 عميل بس</p>
+              <h3 class="plan__name">الباقة المميزة</h3>
+              <p class="plan__price"><b class="px">1500</b> جنيه <span>/ 3 شهور</span></p>
+              <p class="plan__note">
+                يعني <b class="px">500</b> جنيه في الشهر · <span class="save">وفّر 600 جنيه</span>
+              </p>
+              <ul class="plan__list">
+                <li>البرنامج بكل مميزاته</li>
+                <li>مدة الاشتراك: 3 شهور</li>
+                <li>أنا اللي أسطّب البرنامج على جهازك</li>
+                <li>أظبطهولك على مجالك</li>
+                <li>أي مشكلة تظهر، أصلحها في نفس اليوم</li>
+                <li class="plan__perk">+3 أيام زيادة للتجربة</li>
+                <li class="plan__perk">أيام أي مشكلة ما بتتحسبش من اشتراكك</li>
+              </ul>
+              <a
+                class="btn btn--block"
+                data-wa="عايز الباقة المميزة من Telegram Members Manager (3 شهور بـ 1500 جنيه — لأول 15 عميل)"
+                href="#contact"
+              >
+                احجز مكانك
+              </a>
+            </li>
+
+            <li class="plan">
+              <p class="plan__badge plan__badge--ghost">الأوفر من الشهري</p>
+              <h3 class="plan__name">الأداة + فيديو شرح</h3>
+              <p class="plan__price"><b class="px">1800</b> جنيه <span>/ 3 شهور</span></p>
+              <p class="plan__note">
+                يعني <b class="px">600</b> جنيه في الشهر · <span class="save">وفّر 300 جنيه</span>
+              </p>
+              <ul class="plan__list">
+                <li>البرنامج بكل مميزاته</li>
+                <li>مدة الاشتراك: 3 شهور</li>
+                <li>فيديو شرح خطوة بخطوة للبرنامج</li>
+                <li class="plan__perk">+3 أيام زيادة للتجربة</li>
+                <li class="plan__perk">أيام أي مشكلة ما بتتحسبش من اشتراكك</li>
+              </ul>
+              <a
+                class="btn btn--ghost btn--block"
+                data-wa="عايز باقة Telegram Members Manager: الأداة + فيديو شرح (3 شهور بـ 1800 جنيه)"
+                href="#contact"
+              >
+                اطلب الباقة
+              </a>
+            </li>
+          </ul>
+
+          <ul class="perks" aria-label="مع كل باقة">
+            <li>
+              <svg class="perks__ico" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="#i-gift" />
+              </svg>
+              <span><b>3 أيام زيادة للتجربة</b> فوق مدة أي باقة، مجانًا.</span>
+            </li>
+            <li>
+              <svg class="perks__ico" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="#i-clock" />
+              </svg>
+              <span
+                ><b>أي مشكلة تواجهك مش بتتحسب عليك</b> — الأيام اللي البرنامج يقف فيها بسببها بتتضاف
+                لاشتراكك.</span
+              >
+            </li>
+          </ul>
+          <p class="pay"><b>الدفع:</b> إنستاباي أو فودافون كاش — والتفاصيل بتتبعتلك بعد التواصل.</p>
+          <p class="pay">
+            <b>ملحوظة:</b> اشتغل بحد يومي معقول لكل حساب وفي حدود سياسات تيليجرام عشان تحافظ على
+            حساباتك.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ 6. Guarantee ============ -->
+      <section class="section section--tight" aria-labelledby="g-title">
+        <div class="wrap">
+          <div class="guarantee">
+            <svg class="guarantee__ico" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="#i-shield" />
+            </svg>
+            <div>
+              <h2 id="g-title" class="h2 h2--sm">
+                ضمان <span class="px">20</span> يوم — استرجاع كامل
+              </h2>
+              <p>
+                لو حسيت في أول 20 يوم إنها مش مناسبة لأي سبب، تسترجع فلوسك كاملة من غير ما تقول
+                السبب.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Testimonials (placeholder) ============
+           لما يبقى عندك آراء حقيقية من عملاء، حطها مكان الكارت اللي تحت. -->
+      <section class="section section--tight" aria-labelledby="t-title">
+        <div class="wrap">
+          <h2 id="t-title" class="h2 h2--sm">آراء العملاء</h2>
+          <div class="testimonials-empty">قريبًا — آراء أول العملاء هتظهر هنا.</div>
+        </div>
+      </section>
+
+      <!-- ============ 7. Final CTA ============ -->
+      <section id="contact" class="section" aria-labelledby="cta-title">
+        <div class="wrap">
+          <div class="final">
+            <svg class="logo logo--lg" viewBox="0 0 12 12" aria-hidden="true">
+              <use href="#logo" />
+            </svg>
+            <h2 id="cta-title" class="h2">قولّي جروبك عن إيه وأقولك هتنفعك ولا لأ</h2>
+            <p>
+              ابعتلي على واتساب مجال جروبك أو قناتك، وأقولك بصراحة البرنامج هيفيدك ولا لأ قبل ما
+              تدفع.
+            </p>
+            <a
+              class="btn btn--lg"
+              data-wa="أهلًا، بخصوص Telegram Members Manager — جروبي عن: "
+              href="#contact"
+            >
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
+              كلّمني على واتساب
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ 8. Footer ============ -->
+    <footer class="footer">
+      <div class="wrap footer__in">
+        <p>
+          <span class="px" dir="ltr">Telegram Members Manager</span> — من تطوير عدلي إيهاب ·
+          <span class="px" id="year" dir="ltr"></span>
+        </p>
+        <a href="../">← الرجوع للبورتفوليو</a>
+      </div>
+    </footer>
+
+    <!-- Icons (pixel style, drawn on a grid) -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+      <symbol id="logo" viewBox="0 0 12 12" shape-rendering="crispEdges">
+        <path fill="#2aabee" d="M1 6h2V5h2V4h2V3h2V2h2v2h-1v2H9v2H8v2H7v1H6V9H5V8H3V7H1z" />
+        <path fill="#e8f4ff" d="M5 7h1V6h1V5h1v1H7v1H6v1H5z" />
+      </symbol>
+      <symbol id="i-users" viewBox="0 0 24 24" shape-rendering="crispEdges">
+        <path
+          fill="currentColor"
+          d="M4 4h4v4H4zM16 4h4v4h-4zM10 6h4v4h-4zM2 10h8v4H2zM14 10h8v4h-8zM7 13h10v6H7z"
+        />
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24" shape-rendering="crispEdges">
+        <path
+          fill="currentColor"
+          d="M6 2h8v2h2v2h2v8h-2v2h-2v2H6v-2H4v-2H2V6h2V4h2zm1 4v1H6v6h1v1h6v-1h1V7h-1V6z"
+          fill-rule="evenodd"
+        />
+        <path fill="currentColor" d="M16 16h2v2h2v2h2v2h-2v-2h-2v-2h-2z" />
+      </symbol>
+      <symbol id="i-add" viewBox="0 0 24 24" shape-rendering="crispEdges">
+        <path
+          fill="currentColor"
+          d="M6 3h6v6H6zM2 11h14v4H2zM2 15h14v4H2zM18 7h2v3h3v2h-3v3h-2v-3h-3v-2h3z"
+        />
+      </symbol>
+      <symbol id="i-inbox" viewBox="0 0 24 24" shape-rendering="crispEdges">
+        <path fill="currentColor" d="M3 4h18v16H3zm2 2v7h4v2h6v-2h4V6z" fill-rule="evenodd" />
+      </symbol>
+      <symbol id="i-wa" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35M12.05 21.8h-.01a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 01-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88a9.88 9.88 0 019.88 9.89c0 5.45-4.43 9.88-9.88 9.88m8.41-18.3A11.81 11.81 0 0012.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 005.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.17-1.24-6.16-3.48-8.4z"
+        />
+      </symbol>
+      <symbol id="i-key" viewBox="0 0 24 24" shape-rendering="crispEdges">
+        <path
+          fill="currentColor"
+          d="M3 7h8v2h2v2h9v2h-2v3h-3v-3h-2v2h-3v-2h-1v2h-2v2H3zm2 2v6h4V9z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <symbol id="i-msg" viewBox="0 0 24 24" shape-rendering="crispEdges">
+        <path
+          fill="currentColor"
+          d="M2 4h20v13H9l-4 4v-4H2zm2 2v9h3v1l1-1h12V6zm2 2h12v2H6zm0 3h8v2H6z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <symbol id="i-gift" viewBox="0 0 24 24" shape-rendering="crispEdges">
+        <path
+          fill="currentColor"
+          d="M3 8h18v4H3zM4 12h7v9H4zM13 12h7v9h-7zM7 4h2v2h2v2H7zM15 4h2v4h-4V6h2z"
+        />
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" shape-rendering="crispEdges">
+        <path
+          fill="currentColor"
+          d="M8 2h8v2h2v2h2v2h2v8h-2v2h-2v2h-2v2H8v-2H6v-2H4v-2H2V8h2V6h2V4h2zm0 4v2H6v8h2v2h8v-2h2V8h-2V6z"
+          fill-rule="evenodd"
+        />
+        <path fill="currentColor" d="M11 8h2v4h3v2h-5z" />
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24" shape-rendering="crispEdges">
+        <path
+          fill="currentColor"
+          d="M5 2h14v2h2v9h-1v3h-2v2h-2v2h-2v2h-4v-2H8v-2H6v-2H4v-3H3V4h2zm0 2v9h1v3h2v2h2v2h4v-2h2v-2h2v-3h1V4z"
+          fill-rule="evenodd"
+        />
+        <path fill="currentColor" d="M10 12h2v2h-2zM12 10h2v2h-2zM14 8h2v2h-2zM8 10h2v2H8z" />
+      </symbol>
+    </svg>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
