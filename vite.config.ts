@@ -21,6 +21,9 @@ export default defineConfig({
         notFound: resolve(__dirname, '404.html'),
         // FBAUTO product landing page → /<base>/fbauto/
         fbauto: resolve(__dirname, 'fbauto/index.html'),
+        // X Engine and Telegram Members Manager product pages → /<base>/xengine/, /<base>/telegram/
+        xengine: resolve(__dirname, 'xengine/index.html'),
+        telegram: resolve(__dirname, 'telegram/index.html'),
       },
     },
   },
