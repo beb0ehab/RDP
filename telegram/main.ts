@@ -1,14 +1,9 @@
-import '@fontsource/ibm-plex-sans-arabic/arabic-400.css';
-import '@fontsource/ibm-plex-sans-arabic/arabic-600.css';
-import '@fontsource/ibm-plex-sans-arabic/arabic-700.css';
-// Latin glyphs inside Arabic text (Excel, DM, AI…) use the same family.
-import '@fontsource/ibm-plex-sans-arabic/latin-400.css';
-import '@fontsource/ibm-plex-sans-arabic/latin-700.css';
-import '@fontsource/lalezar/arabic-400.css';
-import '@fontsource/pixelify-sans/latin-400.css';
-import '@fontsource/pixelify-sans/latin-700.css';
-// VT323: clearer pixel digits for prices.
-import '@fontsource/vt323/latin-400.css';
+import '@fontsource/rubik/arabic-400.css';
+import '@fontsource/rubik/arabic-500.css';
+import '@fontsource/rubik/arabic-700.css';
+import '@fontsource/rubik/latin-400.css';
+import '@fontsource/rubik/latin-500.css';
+import '@fontsource/rubik/latin-700.css';
 import './style.css';
 
 /* ==================================================================
@@ -31,3 +26,25 @@ document.querySelectorAll<HTMLAnchorElement>('a[data-wa]').forEach((link) => {
 
 const year = document.getElementById('year');
 if (year) year.textContent = String(new Date().getFullYear());
+
+// Reveal sections while scrolling (skipped with reduced motion or without IntersectionObserver).
+const items = document.querySelectorAll<HTMLElement>('[data-reveal]');
+if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.documentElement.classList.add('js');
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target as HTMLElement;
+        // Siblings revealed together come in one after another.
+        const index = Array.from(el.parentElement?.children ?? []).indexOf(el);
+        el.style.transitionDelay = `${Math.min(index, 5) * 80}ms`;
+        el.classList.add('in');
+        setTimeout(() => (el.style.transitionDelay = ''), 1200); // keep hover effects instant
+        io.unobserve(el);
+      });
+    },
+    { rootMargin: '0px 0px -8% 0px' },
+  );
+  items.forEach((el) => io.observe(el));
+}
