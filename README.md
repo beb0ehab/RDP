@@ -98,12 +98,12 @@ package the visitor picked. Until `WHATSAPP_URL` is set, the buttons just scroll
 
 ## X Engine & Telegram Members Manager landing pages
 
-Two more Arabic product pages built from the FBAUTO template, opened by project cards #7 and #8:
+Two more Arabic product pages, each with its own design, opened by project cards #7 and #8:
 
-| Page                     | URL          | Text & prices         | Styles                                   |
-| ------------------------ | ------------ | --------------------- | ---------------------------------------- |
-| X Engine                 | `/xengine/`  | `xengine/index.html`  | `xengine/style.css` (teal, like the app) |
-| Telegram Members Manager | `/telegram/` | `telegram/index.html` | `telegram/style.css` (Telegram blue)     |
+| Page                     | URL          | Text & prices         | Styles                                              |
+| ------------------------ | ------------ | --------------------- | --------------------------------------------------- |
+| X Engine                 | `/xengine/`  | `xengine/index.html`  | `xengine/style.css` (dark, teal — Readex Pro)       |
+| Telegram Members Manager | `/telegram/` | `telegram/index.html` | `telegram/style.css` (light, Telegram blue — Rubik) |
 
 The WhatsApp link is `WHATSAPP_URL` in each page's `main.ts`. The hero images are the project
 screenshots in `public/projects/`.
