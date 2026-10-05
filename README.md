@@ -108,15 +108,6 @@ Two more Arabic product pages, each with its own design, opened by project cards
 The WhatsApp link is `WHATSAPP_URL` in each page's `main.ts`. The hero images are the project
 screenshots in `public/projects/`.
 
-## CV
-
-Everything for the CV lives in **`cv/`**:
-
-- `cv/cv.json` — the content (name, contact, summary, skills, experience, projects, education). Edit this file.
-- `npm run cv` — rebuilds `cv/cv.html`, `cv/Adly_Ehab_CV.pdf` (one-page A4), `cv/preview.png`,
-  and copies the PDF to `public/Adly_Ehab_CV.pdf` for the site's **Download CV** button.
-- Text inside `**…**` is printed in bold. Empty sections are left out.
-
 ## Animations
 
 - **Hero intro** (letters, portrait, text) is pure CSS in `src/index.css` (`.intro*` classes), so it starts with the first paint.

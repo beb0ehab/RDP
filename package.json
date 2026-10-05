@@ -14,8 +14,7 @@
     "format:check": "prettier --check .",
     "screenshots": "node scripts/screenshots.mjs",
     "og": "node scripts/og-image.mjs",
-    "fbauto:image": "node scripts/fbauto-image.mjs",
-    "cv": "node scripts/cv.mjs"
+    "fbauto:image": "node scripts/fbauto-image.mjs"
   },
   "dependencies": {
     "@fontsource/anton": "^5.3.0",
