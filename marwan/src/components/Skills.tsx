@@ -91,18 +91,18 @@ export function Skills() {
         <div className="py-14 lg:ps-8">
           <figure
             data-anim="pop"
-            className="force-dark reveal relative flex h-full flex-col overflow-hidden rounded-md bg-[linear-gradient(160deg,#7a0a16,#2a070c_55%,#0a0a0b)] p-8 shadow-lift"
+            className="force-dark reveal relative flex h-full flex-col overflow-hidden rounded-md bg-[linear-gradient(160deg,#0b4ea2,#0a2647_55%,#07111f)] p-8 shadow-lift"
           >
             <div
               aria-hidden="true"
-              className="absolute -end-16 -top-16 h-56 w-56 rounded-full bg-[#ff4655]/30 blur-3xl"
+              className="absolute -end-16 -top-16 h-56 w-56 rounded-full bg-[#4da3ff]/30 blur-3xl"
             />
-            <QuoteIcon className="relative text-[#ff4655] rtl:-scale-x-100" />
+            <QuoteIcon className="relative text-[#4da3ff] rtl:-scale-x-100" />
             <blockquote className="relative mt-5 flex-1 text-balance text-2xl font-semibold leading-snug">
               {t.quote.text}
             </blockquote>
             <figcaption className="relative mt-8">
-              <span className="block font-script text-4xl leading-none text-[#ff4655]">
+              <span className="block font-script text-4xl leading-none text-[#4da3ff]">
                 {t.quote.author}
               </span>
               <span className="mt-2 block text-xs font-bold uppercase tracking-[0.14em] text-muted">

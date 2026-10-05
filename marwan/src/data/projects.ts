@@ -30,7 +30,7 @@ export const projects: Project[] = [
       ],
     },
     tech: ['Sales Leadership', 'CRM', 'AI Automation'],
-    placeholder: { icon: 'building', from: '#7a0a16', to: '#0a0a0b' },
+    placeholder: { icon: 'building', from: '#0b4ea2', to: '#07111f' },
   },
   {
     id: 'leadora',
@@ -53,7 +53,7 @@ export const projects: Project[] = [
       ],
     },
     tech: ['PHP', 'Python', 'React', 'Node.js', 'MySQL'],
-    placeholder: { icon: 'pipeline', from: '#3f3f46', to: '#09090b' },
+    placeholder: { icon: 'pipeline', from: '#123a66', to: '#07111f' },
   },
   {
     id: 'lead-research-tools',
@@ -77,6 +77,6 @@ export const projects: Project[] = [
       ],
     },
     tech: ['Python', 'Node.js', 'REST APIs', 'LLM Agents'],
-    placeholder: { icon: 'search', from: '#7a0a16', to: '#1a0508' },
+    placeholder: { icon: 'search', from: '#0b4ea2', to: '#07111f' },
   },
 ];

@@ -39,7 +39,7 @@ export function ProjectCard({ project, index, onOpen }: Props) {
         <span
           aria-hidden="true"
           dir="ltr"
-          className="absolute start-4 top-3 font-display text-4xl leading-none text-[#ff4655] drop-shadow"
+          className="absolute start-4 top-3 font-display text-4xl leading-none text-[#4da3ff] drop-shadow"
         >
           {String(index + 1).padStart(2, '0')}
         </span>
