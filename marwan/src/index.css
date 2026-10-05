@@ -5,32 +5,33 @@
 
 @layer base {
   :root {
-    /* Light theme — warm white + deep red accent */
-    --bg: 246 245 243;
+    /* Light theme — cool white + royal blue accent, navy text (matches Marwan's CV) */
+    --bg: 244 247 251;
     --surface: 255 255 255;
-    --surface-2: 236 234 231;
-    --line: 222 219 214;
-    --ink: 14 14 16;
-    --muted: 82 82 91;
-    --accent: 200 16 46; /* #c8102e — text & decoration, 5.8:1 on white */
-    --accent-strong: 200 16 46; /* button background */
+    --surface-2: 232 238 245;
+    --line: 214 224 235;
+    --ink: 16 42 67; /* #102a43 navy */
+    --muted: 72 90 112;
+    --accent: 8 102 198; /* #0866c6 — text & decoration, 5.6:1 on white */
+    --accent-strong: 8 102 198; /* button background */
     --accent-ink: 255 255 255;
-    --accent-soft: 251 231 234;
+    --accent-soft: 225 238 251;
   }
 
   /* .force-dark keeps a block dark in both themes (e.g. the contact panel). */
   .dark,
   .force-dark {
-    --bg: 10 10 11;
-    --surface: 20 20 22;
-    --surface-2: 28 28 31;
-    --line: 42 42 46;
-    --ink: 242 242 242;
-    --muted: 161 161 170;
-    --accent: 255 70 85; /* #ff4655 — 5.9:1 on the dark background */
-    --accent-strong: 214 22 42; /* #d6162a — white text 5.4:1 */
+    /* Dark theme — deep navy + royal blue */
+    --bg: 7 17 31; /* #07111f */
+    --surface: 12 26 45;
+    --surface-2: 18 36 60;
+    --line: 30 52 82;
+    --ink: 236 242 248;
+    --muted: 148 166 189;
+    --accent: 77 163 255; /* #4da3ff — readable on the navy background */
+    --accent-strong: 8 102 198; /* #0866c6 — white text 5.6:1 */
     --accent-ink: 255 255 255;
-    --accent-soft: 46 14 18;
+    --accent-soft: 12 38 70;
   }
   .force-dark {
     color: rgb(var(--ink));

@@ -29,7 +29,7 @@ function Row({ reverse = false, outline = false }: { reverse?: boolean; outline?
             >
               {w}
             </span>
-            <span className="text-2xl text-[#ffb3ba]">✦</span>
+            <span className="text-2xl text-[#bfdcff]">✦</span>
           </li>
         ))}
       </ul>
