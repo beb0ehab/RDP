@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Marwan Hesham — Trading & Financial Markets Analyst</title>
+    <meta
+      name="description"
+      content="Marwan Hesham — trading & financial markets analyst, sales and business development leader, and co-founder of Volume4t. Based in Cairo, Egypt, open to remote work."
+    />
+    <link rel="canonical" href="%VITE_SITE_URL%marwan/" />
+    <meta name="theme-color" content="#0a0a0b" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Marwan Hesham" />
+    <meta property="og:title" content="Marwan Hesham — Trading & Financial Markets Analyst" />
+    <meta
+      property="og:description"
+      content="Stock & forex trading, sales leadership, CRM and AI automation. See my work and get in touch."
+    />
+    <meta property="og:url" content="%VITE_SITE_URL%marwan/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ar_EG" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Marwan Hesham — Trading & Financial Markets Analyst" />
+    <meta
+      name="twitter:description"
+      content="Stock & forex trading, sales leadership, CRM and AI automation. See my work and get in touch."
+    />
+
+    <link rel="icon" href="%BASE_URL%favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="%BASE_URL%favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+    <!-- Heading font used above the fold — fetch it early. -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+      href="/node_modules/@fontsource/anton/files/anton-latin-400-normal.woff2"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Marwan Hesham",
+        "jobTitle": "Trading & Financial Markets Analyst",
+        "email": "mailto:marawanoka23@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
+        "sameAs": ["https://linkedin.com/in/marwan-hesham-0ab710437"]
+      }
+    </script>
+
+    <!-- Apply saved theme/language before first paint (prevents a flash). -->
+    <script>
+      (function () {
+        var d = document.documentElement;
+        var theme = null;
+        var lang = null;
+        try {
+          theme = localStorage.getItem('theme');
+          lang = localStorage.getItem('lang');
+        } catch (e) {}
+        // The design is dark-first: dark unless the visitor picked light.
+        if (theme !== 'light') theme = 'dark';
+        if (theme === 'dark') d.classList.add('dark');
+        d.style.colorScheme = theme;
+        if (lang === 'ar') {
+          d.lang = 'ar';
+          d.dir = 'rtl';
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding: 2rem; font-family: system-ui, sans-serif">
+        Marwan Hesham — Trading & Financial Markets Analyst. Email:
+        <a href="mailto:marawanoka23@gmail.com">marawanoka23@gmail.com</a>
+      </p>
+    </noscript>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
+</html>

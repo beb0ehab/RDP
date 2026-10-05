@@ -24,6 +24,8 @@ export default defineConfig({
         // X Engine and Telegram Members Manager product pages → /<base>/xengine/, /<base>/telegram/
         xengine: resolve(__dirname, 'xengine/index.html'),
         telegram: resolve(__dirname, 'telegram/index.html'),
+        // Marwan Hesham's portfolio (separate site, same repo) → /<base>/marwan/
+        marwan: resolve(__dirname, 'marwan/index.html'),
       },
     },
   },

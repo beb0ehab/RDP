@@ -1,0 +1,18 @@
+{
+  "leadora": {
+    "desktop": "projects/leadora-desktop.webp",
+    "desktopSmall": "projects/leadora-desktop-720.webp",
+    "width": 1440,
+    "height": 900,
+    "mobile": "projects/leadora-mobile.webp",
+    "mobileSmall": "projects/leadora-mobile-195.webp",
+    "mobileWidth": 390,
+    "mobileHeight": 844
+  },
+  "volume4t": {
+    "desktop": "projects/volume4t-desktop.webp",
+    "desktopSmall": "projects/volume4t-desktop-720.webp",
+    "width": 1440,
+    "height": 900
+  }
+}
