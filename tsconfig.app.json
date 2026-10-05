@@ -18,5 +18,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "fbauto", "xengine", "telegram"]
+  "include": ["src", "fbauto", "xengine", "telegram", "marwan/src"]
 }
