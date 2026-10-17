@@ -14,7 +14,7 @@ export const site = {
 
   // Hero portrait: a transparent-background WebP (900×1125) + a 560px copy for phones.
   // Set photo to '' to show the "AE" monogram instead.
-  photo: 'profile.webp' as string,
+  photo: '' as string,
   photoSmall: 'profile-560.webp',
   photoMedium: 'profile-720.webp',
 
