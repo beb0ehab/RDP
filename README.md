@@ -117,7 +117,7 @@ screenshots in `public/projects/`.
   `data-count`, `data-tilt`, `data-magnetic` (see the comment at the top of the file).
 - The red ribbons under the hero are `src/components/Marquee.tsx`.
 - Everything is disabled for visitors with _reduce motion_ enabled.
-- If you change the hero photo, also update the `<link rel="preload" as="image">` in `index.html`.
+- To bring the hero photo back, set `photo: 'profile.webp'` in `src/config.ts` and re-add an image `<link rel="preload">` for it in `index.html`.
 
 ## Deployment
 
